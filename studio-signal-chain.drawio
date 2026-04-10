@@ -1,0 +1,113 @@
+<mxfile>
+  <diagram name="Overview" id="d1">
+    <mxGraphModel dx="1024" dy="768" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Source: Turntable -->
+        <mxCell id="10" value="Technics MK7" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Mixer -->
+        <mxCell id="11" value="Ecler Nuo2" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="200" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MPC3000 -->
+        <mxCell id="20" value="Akai MPC3000" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="80" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MPC2000 -->
+        <mxCell id="21" value="Akai MPC2000" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="560" y="80" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- MPC2500 -->
+        <mxCell id="22" value="Akai MPC2500" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="780" y="80" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- DBX 266xl -->
+        <mxCell id="30" value="DBX 266xl" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="380" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Patchbay -->
+        <mxCell id="40" value="Neutrik Patchbay" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="240" width="380" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Focusrite -->
+        <mxCell id="50" value="Focusrite Scarlett 18i20" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="520" width="380" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Apple Studio M4 -->
+        <mxCell id="60" value="Apple Studio M4&#xa;(Ableton Live)" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=13;fontStyle=0;" vertex="1" parent="1">
+          <mxGeometry x="340" y="660" width="380" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- Edges -->
+
+        <!-- Turntable -> Mixer -->
+        <mxCell id="e1" value="phono in 2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="10" target="11" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Mixer -> Patchbay -->
+        <mxCell id="e2" value="main out L/R&#xa;(bay 23/24)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="11" target="40" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- MPC3000 -> Patchbay -->
+        <mxCell id="e3" value="outs 1-8 (bay 1-8)&#xa;stereo L/R (bay 9/10)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="20" target="40" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- MPC2000 -> Patchbay -->
+        <mxCell id="e4" value="outs 1-8 (bay 11-18)&#xa;stereo L/R (bay 19/20)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="21" target="40" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Patchbay -> DBX (insert on ch 1,2) -->
+        <mxCell id="e5" value="insert ch 1/2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="40" target="30" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="430" y="340"/>
+              <mxPoint x="420" y="340"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- DBX -> Scarlett -->
+        <mxCell id="e6" value="to scarlett in 1/2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="30" target="50" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="480"/>
+              <mxPoint x="430" y="480"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Patchbay -> Scarlett (outs 3-8) -->
+        <mxCell id="e7" value="outs 1-8&#xa;(halfnormalled)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="40" target="50" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="400"/>
+              <mxPoint x="660" y="400"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Scarlett -> Mac -->
+        <mxCell id="e8" value="USB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" edge="1" source="50" target="60" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
