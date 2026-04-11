@@ -15,23 +15,21 @@ When the beat sounds good enough, basically a few loops then i record through th
 - Apple Studio M4
 - Focusrite Scarlett 18i20 
   - usb -> Apple Studio M4
+  - out 1,2 -> speakers/monitors L,R
+  - out 7,8 -> MPC3000 record in L,R
+  - out 9,10 -> MPC2000 record in L,R
 
 - Neutrik patchbay 
   - outs 1-8 -> scarlett ins 1-8
-  - halfnormalled 1-8: mpc3000 is standard routed to scarlett, mpc2000 needs to be patched when needed
 
 - Technics MK7 -> Ecler Nuo2 phono input 2
-- Ecler Nuo2 main out L/R -> Neutrik patchbay 23/24
+- Ecler Nuo2 main out L/R -> Neutrik patchbay 7,8
 
 - MPC3000
-  - individual outputs 1-8 -> Neutrik patchbay 1-8
-  - stereo out L -> patchbay 9
-  - stereo out R -> patchbay 10
+  - individual outputs 1-8 -> Neutrik patchbay 1-6,9,10
   
 - MPC2000
   - individual outputs 1-8 into Neutrik patchbay 11-18
-  - stereo out L into patchbay 19
-  - stereo out R into patchbay 20
 
 - DBX 266xl
   - channels 1 and 2 are inserted between patchbay outs 1,2 and scarlett in 1,2

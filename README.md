@@ -13,21 +13,22 @@ Hardware-first home studio for making boombap hip-hop beats. Vinyl sampling thro
 
 ```mermaid
 graph TD
-    TT[Technics MK7] -->|phono in 2| MIX[Ecler Nuo2]
-    MIX -->|main out L/R · bay 23/24| PB[Neutrik Patchbay]
+    TT[Technics MK7] -->|channel 2| MIX[Ecler Nuo2]
+    MIX -->|main out L/R · bay 7/8| PB[Neutrik Patchbay]
 
-    MPC3000 -->|outs 1-8 · bay 1-8| PB
-    MPC3000 -->|stereo L/R · bay 9/10| PB
+    MPC3000 -->|outs 1-8 · bay 1-6, 9, 10| PB
     MPC2000 -->|outs 1-8 · bay 11-18| PB
-    MPC2000 -->|stereo L/R · bay 19/20| PB
 
     PB -->|bay outs 1/2| DBX[DBX 266xl]
     DBX -->|scarlett in 1/2| SC[Focusrite Scarlett 18i20]
-    PB -->|bay outs 3-8 · halfnormalled| SC
+    PB -->|bay outs 3-8| SC
 
     SC -->|USB| MAC[Apple Studio M4 · Ableton Live]
+    SC -->|out 1/2| MON[Monitors]
+    SC -->|out 7/8| MPC3000
+    SC -->|out 9/10| MPC2000
 ```
 
 ## Patchbay Routing
 
-The Neutrik patchbay is halfnormalled on bays 1-8: MPC3000 is the default routing to the Scarlett. Patch MPC2000 (bays 11-18) manually when switching samplers. The DBX 266xl is inserted on channels 1 and 2 between the patchbay and the Scarlett.
+Patchbay outs 1-8 feed Scarlett ins 1-8. The DBX 266xl is inserted on channels 1 and 2 between the patchbay and the Scarlett.
