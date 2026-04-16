@@ -13,24 +13,38 @@ When the beat sounds good enough, basically a few loops then i record through th
 ## Gear and signal chain
 
 - Apple Studio M4
-- Focusrite Scarlett 18i20 
+- Focusrite Scarlett 18i20 with Focusrite Scarlett OctoPre, resulting in 16 line ins
   - usb -> Apple Studio M4
   - out 1,2 -> speakers/monitors L,R
   - out 7,8 -> MPC3000 record in L,R
   - out 9,10 -> MPC2000 record in L,R
 
-- Neutrik patchbay 
-  - outs 1-8 -> scarlett ins 1-8
-
+- Teenage Engineering KOII -> Ecler Nuo2 line input 1
 - Technics MK7 -> Ecler Nuo2 phono input 2
-- Ecler Nuo2 main out L/R -> Neutrik patchbay 7,8
+- Ecler Nuo2 main out L/R -> Focusrite Scarlett in 15,16
 
 - MPC3000
-  - individual outputs 1-8 -> Neutrik patchbay 1-6,9,10
+  - individual outputs 1,2 -> SPL Transient Designer in 1,2
+  - individual outputs 3-7 -> Neutrik patchbay 3-7
   
 - MPC2000
-  - individual outputs 1-8 into Neutrik patchbay 11-18
+  - individual outputs 1,2 -> SPL Transient Designer in 3,4
+  - individual outputs 3-7 -> Neutrik patchbay 10-14
+
+- SPL Transient Designer
+  - channel 1 -> patchbay in 1
+  - channel 2 -> patchbay in 2
+  - channel 3 -> patchbay in 8
+  - channel 4 -> patchbay in 9
 
 - DBX 266xl
-  - channels 1 and 2 are inserted between patchbay outs 1,2 and scarlett in 1,2
+  - patchbay in/out 17,18
 
+- Lexicon MPX100
+  - patchbay in/out 19
+
+- Alesis XT:C
+  - patchbay in/out 20
+
+- Neutrik patchbay 
+  - outs 1-14 -> scarlett 1-14

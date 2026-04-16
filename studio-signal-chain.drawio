@@ -1,75 +1,109 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
   <diagram name="Overview" id="d1">
-    <mxGraphModel dx="1018" dy="781" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="2300" dy="772" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=13;fontStyle=0;" value="Technics MK7" vertex="1">
-          <mxGeometry height="60" width="160" x="40" y="80" as="geometry" />
+          <mxGeometry height="60" width="160" x="150" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=13;fontStyle=0;" value="TE KOII" vertex="1">
+          <mxGeometry height="60" width="160" x="-60" y="160" as="geometry" />
         </mxCell>
         <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" value="Ecler Nuo2" vertex="1">
-          <mxGeometry height="60" width="160" x="40" y="200" as="geometry" />
+          <mxGeometry height="60" width="160" x="40" y="300" as="geometry" />
         </mxCell>
         <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC3000" vertex="1">
-          <mxGeometry height="60" width="160" x="380" y="80" as="geometry" />
+          <mxGeometry height="60" width="160" x="340" y="80" as="geometry" />
         </mxCell>
         <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC2000" vertex="1">
-          <mxGeometry height="60" width="160" x="600" y="80" as="geometry" />
+          <mxGeometry height="60" width="160" x="560" y="80" as="geometry" />
         </mxCell>
-        <mxCell id="30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="DBX 266xl" vertex="1">
-          <mxGeometry height="60" width="160" x="340" y="380" as="geometry" />
+        <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="SPL Transient Designer" vertex="1">
+          <mxGeometry height="60" width="200" x="400" y="200" as="geometry" />
         </mxCell>
         <mxCell id="40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" value="Neutrik Patchbay" vertex="1">
-          <mxGeometry height="60" width="460" x="300" y="240" as="geometry" />
+          <mxGeometry height="60" width="500" x="260" y="340" as="geometry" />
         </mxCell>
-        <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" value="Focusrite Scarlett 18i20" vertex="1">
-          <mxGeometry height="60" width="460" x="300" y="520" as="geometry" />
+        <mxCell id="30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="DBX 266xl" vertex="1">
+          <mxGeometry height="60" width="140" x="920" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="Lexicon MPX100" vertex="1">
+          <mxGeometry height="60" width="140" x="920" y="340" as="geometry" />
+        </mxCell>
+        <mxCell id="37" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="Alesis XT:C" vertex="1">
+          <mxGeometry height="60" width="140" x="920" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" value="Focusrite Scarlett 18i20&#xa;+ OctoPre (16 ins)" vertex="1">
+          <mxGeometry height="60" width="500" x="260" y="560" as="geometry" />
         </mxCell>
         <mxCell id="60" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=13;fontStyle=0;" value="Apple Studio M4&#xa;(Ableton Live)" vertex="1">
-          <mxGeometry height="60" width="460" x="300" y="660" as="geometry" />
+          <mxGeometry height="60" width="500" x="260" y="700" as="geometry" />
         </mxCell>
         <mxCell id="70" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=13;fontStyle=0;" value="Monitors" vertex="1">
-          <mxGeometry height="60" width="160" x="50" y="660" as="geometry" />
+          <mxGeometry height="60" width="160" x="50" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="e1" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="11" value="channel 2">
+        <mxCell id="e1" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="11" value="phono in 2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="40" value="main out L/R&#xa;(bay 7/8)">
+        <mxCell id="e1b" edge="1" parent="1" source="12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="11" value="line in 1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="40" value="outs 1-8&#xa;(bay 1-6, 9, 10)">
-          <mxGeometry relative="1" x="-0.5294" y="-50" as="geometry">
+        <mxCell id="e2" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="main out L/R&#xa;(scarlett in 15/16)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="560" />
+              <mxPoint x="120" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3a" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="35" value="outs 1/2&#xa;(SPL in 1/2)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3b" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" value="outs 3-7&#xa;(bay 3-7)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="180" />
+              <mxPoint x="350" y="180" />
+            </Array>
+            <mxPoint x="350" y="336" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4a" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="35" value="outs 1/2&#xa;(SPL in 3/4)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4b" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.84;entryY=-0.015;entryDx=0;entryDy=0;entryPerimeter=0;" target="40" value="outs 3-7&#xa;(bay 10-14)">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="290" />
+              <mxPoint x="680" y="290" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="35" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="40" value="ch 1/2 → bay 1/2&#xa;ch 3/4 → bay 8/9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6a" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="30" value="bay 17/18">
+          <mxGeometry relative="1" x="0.4783" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="840" y="370" />
+              <mxPoint x="840" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6b" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="36" value="bay 19">
+          <mxGeometry relative="1" x="0.375" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e4" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="40" value="outs 1-8&#xa;(bay 11-18)">
-          <mxGeometry relative="1" x="-0.68" y="40" as="geometry">
+        <mxCell id="e6c" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="37" value="bay 20">
+          <mxGeometry relative="1" x="0.5833" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e5" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="30" value="outs 1/2">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="420" y="340" />
-              <mxPoint x="420" y="340" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e6" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="in 1/2">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="420" y="480" />
-              <mxPoint x="420" y="480" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="e7" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="outs 3-8&#xa;(halfnormalled)">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="660" y="400" />
-              <mxPoint x="660" y="400" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="e7" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="outs 1-14&#xa;→ scarlett 1-14">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e8" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="60" value="USB">
           <mxGeometry relative="1" as="geometry" />
@@ -80,18 +114,18 @@
         <mxCell id="e10" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" target="20" value="out 7/8&#xa;(record in L/R)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="890" y="565" />
+              <mxPoint x="890" y="605" />
               <mxPoint x="890" y="30" />
-              <mxPoint x="460" y="30" />
+              <mxPoint x="420" y="30" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e11" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="21" value="out 9/10&#xa;(record in L/R)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="820" y="535" />
+              <mxPoint x="820" y="575" />
               <mxPoint x="820" y="50" />
-              <mxPoint x="680" y="50" />
+              <mxPoint x="640" y="50" />
             </Array>
           </mxGeometry>
         </mxCell>
