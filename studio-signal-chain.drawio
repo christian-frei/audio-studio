@@ -47,7 +47,7 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="e5" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="30" value="insert ch 1/2">
+        <mxCell id="e5" edge="1" parent="1" source="40" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="30" value="outs 1/2">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="420" y="340" />
@@ -55,7 +55,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e6" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="scarlett in 1/2">
+        <mxCell id="e6" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="in 1/2">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="420" y="480" />

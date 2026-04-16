@@ -1,2 +1,4 @@
 .*.dtmp
 *.swp
+.$studio-signal-chain.drawio.bkp
+resume_claude.sh
