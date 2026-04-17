@@ -38,13 +38,18 @@ When the beat sounds good enough, basically a few loops then i record through th
   - channel 4 -> patchbay in 9
 
 - DBX 266xl
-  - patchbay in/out 17,18
-
-- Lexicon MPX100
-  - patchbay in/out 19
+  - patchbay out 15 -> channel 1 in
+  - channel 1 out -> patchbay in 16
+  - patchbay out 17 -> channel 2 in
+  - channel 2 out -> Alesis XT:C in
 
 - Alesis XT:C
-  - patchbay in/out 20
+  - DBX 266xl channel 2 out -> in
+  - out -> patchbay in 18
 
-- Neutrik patchbay 
+- Lexicon MPX100
+  - patchbay out 19 -> in
+  - out -> patchbay in 20
+
+- Neutrik patchbay (half-normalled, SPP L1)
   - outs 1-14 -> scarlett 1-14
