@@ -13,43 +13,49 @@ When the beat sounds good enough, basically a few loops then i record through th
 ## Gear and signal chain
 
 - Apple Studio M4
+
 - Focusrite Scarlett 18i20 with Focusrite Scarlett OctoPre, resulting in 16 line ins
   - usb -> Apple Studio M4
   - out 1,2 -> speakers/monitors L,R
   - out 7,8 -> MPC3000 record in L,R
   - out 9,10 -> MPC2000 record in L,R
 
-- Teenage Engineering KOII -> Ecler Nuo2 line input 1
 - Technics MK7 -> Ecler Nuo2 phono input 2
+
 - Ecler Nuo2 main out L/R -> Focusrite Scarlett in 15,16
 
+- Palmer Pan 16 passive DI-box, merge link is active on all channels
+  - xlr balanced out 1 -> Transient Designer 1
+  - xlr balanced out 2 -> Transient Designer 2
+  - xlr balanced out 3 -> Transient Designer 3
+  - xlr balanced out 4 -> Transient Designer 4
+  - xlr balanced outs 5-8 into scarlett 5-8
+
 - MPC3000
-  - individual outputs 1,2 -> SPL Transient Designer in 1,2
-  - individual outputs 3-7 -> Neutrik patchbay 3-7
+  - individual outputs 1-8 -> Palmer Pan 3-8
+  - stereo out L/R -> scarlett 9/10
   
 - MPC2000
-  - individual outputs 1,2 -> SPL Transient Designer in 3,4
-  - individual outputs 3-7 -> Neutrik patchbay 10-14
+  - individual outputs 1-8 -> Palmer Pan 3-8
+  - stereo out L/R -> scarlett 11/12
 
-- SPL Transient Designer
-  - channel 1 -> patchbay in 1
-  - channel 2 -> patchbay in 2
-  - channel 3 -> patchbay in 8
-  - channel 4 -> patchbay in 9
+- Teenage Engineering KOII -> Ecler Nuo2 line input 1
 
 - DBX 266xl
-  - patchbay out 15 -> channel 1 in
-  - channel 1 out -> patchbay in 16
-  - patchbay out 17 -> channel 2 in
-  - channel 2 out -> Alesis XT:C in
+  - Palmer pan out 1 -> channel 1 in
+  - channel 1 out -> SPL in 1
+  - Palmer pan out 2 -> channel 2 in
+  - channel 2 out -> SPL in 2
 
-- Alesis XT:C
-  - DBX 266xl channel 2 out -> in
-  - out -> patchbay in 18
+- SPL Transient Designer
+  - channel 1,3,4 -> scarlett in 1,3,4
+  - channel 2 -> MPX100 in
 
 - Lexicon MPX100
-  - patchbay out 19 -> in
-  - out -> patchbay in 20
+  - out -> scarlett in 2
+
+- Alesis XT:C
+  - currently not in use
 
 - Neutrik patchbay (half-normalled, SPP L1)
-  - outs 1-14 -> scarlett 1-14
+  - currently not in use
