@@ -13,26 +13,32 @@
         <mxCell id="11" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" value="Ecler Nuo2" vertex="1">
           <mxGeometry height="60" width="160" x="40" y="300" as="geometry" />
         </mxCell>
-        <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC2500&#xa;(kick 1 · snare 2 · hats 3 · bass 4 · samples 5-8)" vertex="1">
-          <mxGeometry height="60" width="220" x="310" y="80" as="geometry" />
+        <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC2500&#xa;(primary · kick 1 · snare 2 · hats 3 · bass 4 · samples 5-8)" vertex="1">
+          <mxGeometry height="60" width="200" x="240" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC2000" vertex="1">
-          <mxGeometry height="60" width="160" x="580" y="80" as="geometry" />
+        <mxCell id="22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC3000&#xa;(secondary)" vertex="1">
+          <mxGeometry height="60" width="160" x="470" y="60" as="geometry" />
         </mxCell>
-        <mxCell id="38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="Vermona Filter Lancet&#xa;(1 ch)" vertex="1">
-          <mxGeometry height="60" width="180" x="710" y="160" as="geometry" />
+        <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;fontSize=13;fontStyle=0;" value="Akai MPC2000&#xa;(re-sampling source)" vertex="1">
+          <mxGeometry height="60" width="160" x="670" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="38" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="Vermona Filter Lancet&#xa;(1 ch, aux · filter + re-sample band-split)" vertex="1">
+          <mxGeometry height="60" width="200" x="910" y="364" as="geometry" />
         </mxCell>
         <mxCell id="35" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="SPL Transient Designer&#xa;(4 ch)" vertex="1">
           <mxGeometry height="60" width="200" x="700" y="260" as="geometry" />
         </mxCell>
-        <mxCell id="30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="DBX 266xl&#xa;(2 ch)" vertex="1">
-          <mxGeometry height="60" width="160" x="720" y="364" as="geometry" />
+        <mxCell id="30" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="DBX 266xl&#xa;(2 ch, stereo-couple)" vertex="1">
+          <mxGeometry height="60" width="180" x="710" y="364" as="geometry" />
         </mxCell>
         <mxCell id="36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="Lexicon MPX100&#xa;(stereo reverb)" vertex="1">
-          <mxGeometry height="60" width="160" x="720" y="460" as="geometry" />
+          <mxGeometry height="60" width="160" x="710" y="460" as="geometry" />
         </mxCell>
         <mxCell id="40" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;fontSize=13;fontStyle=0;" value="Alesis XT:C&#xa;(reverb)" vertex="1">
-          <mxGeometry height="60" width="160" x="940" y="460" as="geometry" />
+          <mxGeometry height="60" width="160" x="930" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="45" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=0;" value="Palmer Pan 16&#xa;(passive DI, merge link)&#xa;merges both MPCs → ch 1-8" vertex="1">
+          <mxGeometry height="70" width="220" x="300" y="420" as="geometry" />
         </mxCell>
         <mxCell id="50" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;fontSize=13;fontStyle=1;" value="Tascam Model 2400&#xa;(mixer + 24x22 USB interface — hub, replaces Scarlett)" vertex="1">
           <mxGeometry height="60" width="500" x="260" y="560" as="geometry" />
@@ -43,8 +49,8 @@
         <mxCell id="70" parent="1" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;fontSize=13;fontStyle=0;" value="Monitors" vertex="1">
           <mxGeometry height="60" width="160" x="50" y="700" as="geometry" />
         </mxCell>
-        <mxCell id="note1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=11;align=left;verticalAlign=top;spacing=6;dashed=1;" value="Notes&#xa;• Tascam 2400 = mixer + USB interface (replaces Scarlett)&#xa;• Palmer DI removed — MPC outs go straight to Tascam&#xa;• Outboard, 2 roles: mixdown (SPL/DBX inserts, Lexicon/Alesis aux) + serial re-sampling chain (MPC2000→Vermona→SPL→DBX→Lexicon→MPC2500)&#xa;• USB carries stereo mix (Pass 1) + per-channel stems (Pass 2)&#xa;• Dashed yellow = outboard mixdown routing" vertex="1">
-          <mxGeometry height="170" width="300" x="-60" y="440" as="geometry" />
+        <mxCell id="note1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#000000;fontSize=11;align=left;verticalAlign=top;spacing=6;dashed=1;" value="Notes&#xa;• Tascam 2400 = mixer + USB interface (replaces Scarlett)&#xa;• Palmer Pan 16 MERGES MPC2500 + MPC3000 outs 1-8 → Tascam ch 1-8; both stay patched, one MPC active at a time&#xa;• Mixdown outboard: SPL/DBX inserts; Lexicon/Alesis/Vermona aux&#xa;• Re-sample band-split: MPC2000 → Tascam ch (EQ) → Vermona on aux → aux/sub out → MPC record-in (2500/3000)&#xa;• USB carries stereo mix (Pass 1) + per-channel stems (Pass 2)&#xa;• Dashed yellow = outboard aux/insert routing" vertex="1">
+          <mxGeometry height="180" width="300" x="-70" y="420" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="11" value="phono in 2">
           <mxGeometry relative="1" as="geometry" />
@@ -55,51 +61,43 @@
         <mxCell id="e2" edge="1" parent="1" source="11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="main out L/R&#xa;→ Tascam stereo ch">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="120" y="560" />
+              <mxPoint x="120" y="540" />
               <mxPoint x="120" y="590" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e3a" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="outs 1-8&#xa;→ ch 1-8">
+        <mxCell id="e3a" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="45" value="outs 1-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e4a" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="outs 1-8 → ch 1-8&#xa;(when beat machine)">
+        <mxCell id="eP3" edge="1" parent="1" source="22" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="45" value="outs 1-8">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e3s" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="50" value="stereo L/R&#xa;(optional)">
+        <mxCell id="ePT" edge="1" parent="1" source="45" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=1;endArrow=block;endFill=1;shadow=0;" target="50" value="merge → ch 1-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3s" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;dashed=1;" target="50" value="stereo L/R (optional)">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="380" y="340" />
-              <mxPoint x="380" y="340" />
+              <mxPoint x="230" y="340" />
+              <mxPoint x="230" y="600" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="efx1" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="38" value="stereo L/R&#xa;(re-sample)">
-          <mxGeometry relative="1" x="0.7048" y="15" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="esrc" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="50" value="stereo L/R → Tascam ch (EQ)">
+          <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="660" y="190" />
+              <mxPoint x="660" y="150" />
+              <mxPoint x="660" y="540" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="TzeuNchovAV549coVqab-71" connectable="0" parent="efx1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="stereo L/R" vertex="1">
-          <mxGeometry relative="1" x="-0.3589" y="1" as="geometry">
-            <mxPoint y="51" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="efx2" edge="1" parent="1" source="38" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="35" value="filtered band">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="efx3" edge="1" parent="1" source="35" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="30" value="shaped">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="efx4" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;" target="36" value="compressed">
+        <mxCell id="eaux3" edge="1" parent="1" source="38" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d6b656;fontColor=#7f6000;fontSize=11;fontStyle=2;endArrow=block;endFill=1;shadow=0;dashed=1;" target="50" value="aux send/return (filter · re-sample band-split)">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eins1" edge="1" parent="1" source="35" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d6b656;fontColor=#7f6000;fontSize=11;fontStyle=2;endArrow=block;endFill=1;shadow=0;dashed=1;" target="50" value="insert ch 1-4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eins2" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d6b656;fontColor=#7f6000;fontSize=11;fontStyle=2;endArrow=block;endFill=1;shadow=0;dashed=1;" target="50" value="insert (drum subgroup)">
+        <mxCell id="eins2" edge="1" parent="1" source="30" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d6b656;fontColor=#7f6000;fontSize=11;fontStyle=2;endArrow=block;endFill=1;shadow=0;dashed=1;" target="50" value="insert: drum subgroup (stereo)">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eaux1" edge="1" parent="1" source="36" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#d6b656;fontColor=#7f6000;fontSize=11;fontStyle=2;endArrow=block;endFill=1;shadow=0;dashed=1;" target="50" value="aux send/return">
@@ -114,21 +112,19 @@
         <mxCell id="e9" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" target="70" value="monitor out L/R">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e10" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.111;exitY=-0.012;exitDx=0;exitDy=0;exitPerimeter=0;" target="20" value="aux/sub → record in L/R">
-          <mxGeometry relative="1" x="-0.2124" as="geometry">
-            <mxPoint as="offset" />
+        <mxCell id="e10" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=0.05;exitY=0;exitDx=0;exitDy=0;" target="20" value="aux/sub → record in">
+          <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="315" y="50" />
-              <mxPoint x="420" y="50" />
+              <mxPoint x="250" y="120" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e11" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="21" value="aux/sub → record in L/R">
+        <mxCell id="e11" edge="1" parent="1" source="50" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;strokeColor=#000000;fontColor=#000000;fontSize=11;fontStyle=0;endArrow=block;endFill=1;shadow=0;exitX=1;exitY=0.25;exitDx=0;exitDy=0;" target="22" value="aux/sub → record in">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1120" y="575" />
-              <mxPoint x="1120" y="40" />
-              <mxPoint x="660" y="40" />
+              <mxPoint x="900" y="575" />
+              <mxPoint x="900" y="20" />
+              <mxPoint x="550" y="20" />
             </Array>
           </mxGeometry>
         </mxCell>

@@ -6,9 +6,9 @@ This is my home studio where i make boombap hiphop beats.
 
 I use a Technics MK7 turntable that goes into a Nuo2 mixer.
 Sampling happens usually directly into one of my Akai MPCs 3000, 2000 or 2500.
-To reduce screentime in the evening I try to use hardware as much as possible without turning into a complete gear nerd. Hardware should not cost more than 1000CHF (the central mixing console is the deliberate exception — see dawless-setup.md).
+To reduce screentime in the evening I try to use hardware as much as possible without turning into a complete gear nerd. Hardware should not cost more than 1000CHF (the central mixing console is the deliberate exception).
 Usually, I create one beat at a time on one of my MPCs, I don't switch during a project.
-When the beat sounds good enough, basically a few loops, then i record through the 8 individual outs of the MPC into the Tascam Model 2400 console. Mixing, EQ and summing happen on the Tascam (hardware, daw-less); the stereo mix — and optionally the 8 dry stems — are captured over USB. I only switch to ableton for mastering. See dawless-setup.md for the full daw-less workflow and the two-pass (mix + stems) capture.
+When the beat sounds good enough, basically a few loops, then i record through the 8 individual outs of the MPC into the Tascam Model 2400 console. Mixing, EQ and summing happen on the Tascam (hardware, daw-less); the stereo mix — and optionally the 8 dry stems — are captured over USB. I only switch to ableton for mastering. See "Daw-less mixdown, capture and recall" below for the two-pass (mix + stems) workflow.
 
 Medium fidelity:
 after watching the masterclass from The Alchemist on aulart.com i try to copy his workflow. he samples everything from the turntable through the dj mixer where heavy EQ is applied to sample the sounds/sonics as close as possible to the end result. the turntable is used like an instrument, the pitch shifter is used to find sonics that are not always hearable at normal speeds. also he uses scratch techniques to sample new kinds of sounds. i m studying the basics of turntableism to achieve these effects.
@@ -16,56 +16,78 @@ once sampled he used the LP, BP and HP filters on the MPC2500 to combine differe
 The goal is to have a complete beat on the MPC2500 which is medium fidelity: enough for rappers to listen to it and get inspired.
 Once a track is chosen, only then it is tracked through the eight outs into the Tascam, mixed on the console (daw-less), and the stereo master goes into ableton for mastering only (e.g. Landr).
 
-## Manual stem-splitting via outboard FX chain
+## Manual stem-splitting via tascam EQ and Vermona Filter Lancet
 
-To stay away from the computer and avoid digital stem separation, samples can be band-split using the outboard FX chain and re-sampled into the MPC2500. The MPC2000 plays back the source sample, its stereo out goes through the FX chain, and the result is sampled back into the MPC2500.
+To stay away from the computer and avoid digital stem separation, samples can be band-split using the tascam EQs and the vermona filter and re-sampled into the MPC2500 or MPC3000. The MPC2000 plays back the source sample, its stereo out goes into a tascam stereo channel with its EQs. the filter lancet is routed over a aux send return.
 
-Chain order: Vermona Lancet -> SPL Transient Designer -> DBX 266xl -> Lexicon MPX100
-- Vermona Lancet first: filter to isolate a frequency band (HP, BP, or LP)
-- SPL Transient Designer: shape attack/sustain on the isolated band
-- DBX 266xl: compress and gate the shaped result
-- Lexicon MPX100: add space last so reverb tails are not filtered or compressed
 
 Three-pass band isolation (Premier-style):
-- Pass 1: Vermona HP around 250 Hz -> re-sample into MPC2500 pad A (highs, hats, perc)
+- Pass 1: Vermona HP around 250 Hz -> re-sample into MPC2500/3000 pad A (highs, hats, perc)
 - Pass 2: Vermona LP around 250 Hz -> pad B (bass, kick body)
 - Pass 3: Vermona BP around 1 kHz with high resonance -> pad C (mid focus)
 
 Each pass produces an independently mute-able, layer-able "stem" on its own pad, with analog filter character that digital stem separation cannot replicate.
 
+## Daw-less mixdown, capture and recall
+
+All mixing, EQ and summing happen on the Tascam; Ableton is only for mastering. The Tascam is
+mixer and USB interface in one, so the mix and the stems come off a single USB cable with no
+rewiring — the split happens inside the box.
+
+Two-pass capture (nothing rewired between passes; can be a single take):
+- **Pass 1 — the mix (every beat):** arm the Tascam stereo master, EQ/balance on the desk, stereo bus -> 2-track -> master in Ableton.
+- **Pass 2 — dry stems (only when a beat gets picked up):** arm the per-channel USB multitrack (ch 1-8) and record the 8 dry channels. Can be done any time later.
+
+Recall principle — the **MPC project is the archive, not the mixer**: the saved sequence,
+samples, program and out-routing reload to identical 8-out audio, so dry stems are always
+re-recordable; only the analog summing/EQ pass is unrecallable (fine — a pro mix wants dry
+stems anyway). **Save every MPC project + its samples religiously.** For truly dry stems,
+verify the Tascam's per-channel USB tap is pre-EQ; if post-EQ, use the ch 1-12 insert
+half-plug (TRS to first detent) for a pre-EQ analog tap.
+
 ## Gear and signal chain
 
 - Apple Studio M4
 
-- Tascam Model 2400 — 24-channel analog mixing console with built-in 24x22 USB interface and SD multitrack recorder. This is the studio hub: all mixing, EQ and summing happen here, and it is also the audio interface. Replaces the Focusrite Scarlett.
+- Tascam Model 2400 — 24-channel analog mixing console with built-in 24x22 USB interface and SD multitrack recorder. This is the studio hub: all mixing, EQ and summing happen here, and it is also the audio interface. Replaces the Focusrite Scarlett. Chosen as a clean, current, buyable hub — under 5k CHF no colored console with per-channel EQ + 8 individual outs exists, so the colour comes from the outboard, not the desk. (Fallback colored desk if ever wanted, used market: Toft ATB-16, Midas Venice, A&H GL2400.)
   - usb -> Apple Studio M4 (per-channel multitrack = dry stems, stereo master = the mix)
   - monitor out L/R -> speakers/monitors L,R
-  - aux / subgroup outs -> MPC record-ins (2500/2000/3000) for re-sampling  [exact bus assignment TBD]
+  - aux / subgroup outs -> MPC record-ins (2500 & 3000) for re-sampling  [exact bus assignment TBD]
 
-- MPC2500 (primary beat machine)
-  - individual outputs 1-8 -> Tascam channels 1-8   (line in, no DI)
+- MPC2500
+  - individual outputs 1-8 -> Palmer DI8 -> Tascam channels 1-8
   - stereo out L/R -> spare Tascam stereo channel (optional)
+  - record in from tascam - details TBD
 
 - MPC3000
-  - individual outputs 1-8 -> Tascam channels channels 9-16
-  - stereo out L/R -> outboard FX chain -> MPC2500 record in (manual stem-splitting, see above)
+  - individual outputs 1-8 -> Palmer DI8 -> Tascam channels 1-8
+  - stereo out L/R -> spare Tascam stereo channel (optional)
+  - record in from tascam - details TBD
+
+- MPC2000 
+  - only as sample chopper
+  - stereo out L/R -> Tascam stereo channel
+  - will be resampled by either 2500 or 3000
+
 
 - Technics MK7 -> Ecler Nuo2 phono input 2
 - Teenage Engineering KOII -> Ecler Nuo2 line input 1
 - Ecler Nuo2 main out L/R -> Tascam stereo channel (e.g. 21/22)
 
-- Outboard FX — routed by type: in-line dynamics/tone on channel inserts, ambience on aux. Full patch in dawless-setup.md. Also doubles as the manual stem-splitting re-sampling chain (see that section).
-  - SPL Transient Designer (4 ch) — inserts on kick/snare/hats/bass (ch 1-4), transient shaping per drum
-  - DBX 266xl (2 ch) — insert across the drum subgroup (stereo) for kit glue
-  - Vermona Filter Lancet (1 ch) — insert on a sample channel when filtering a layer; also the re-sampling chain
+- Outboard FX — routed by type: dynamics on channel inserts, ambience and the filter on aux. Each channel has one insert point — chain two boxes externally to share it. Pad/channel layout: kick 1, snare 2, hats 3, bass 4, samples 5-8.
+  - SPL Transient Designer (4 ch) — inserts on kick/snare/hats/bass (ch 1-4), transient shaping per drum (prints on the stems)
+  - DBX 266xl (2 ch) — insert across the drum subgroup (ch 1-4 summed, stereo) for kit glue. Run **Stereo Couple ON** (ch1 master, ch2 follows) so both sides duck together and the image stays centered; ~2:1 OverEasy, 2-4 dB. Glue prints on the mix only, not the ch 1-8 stems (they tap pre-subgroup). Verify the 2400 subgroup exposes L+R insert points.
+  - Vermona Filter Lancet (1 ch) — AUX send/return
   - Lexicon MPX100 (stereo reverb) — AUX send/return
   - Alesis XT:C (reverb) — AUX send/return
 
+- Palmer Pan 16 passive DI-box
+  merges the 8 individual outs of both MPC2500 and MPC3000
+
+## currently not in use
+
 - Focusrite Scarlett 18i20 + Focusrite Scarlett OctoPre
   - replaced by the Tascam as hub/interface; kept as a spare converter, currently not in the main chain
-
-- Palmer Pan 16 passive DI-box
-  - no longer needed — it only balanced the MPC outs for the long run to the Scarlett; the Tascam takes the MPC line outs directly. Free to reuse or retire.
 
 - Neutrik patchbay (half-normalled, SPP L1)
   - currently not in use
