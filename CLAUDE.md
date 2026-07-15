@@ -52,27 +52,29 @@ half-plug (TRS to first detent) for a pre-EQ analog tap.
 - Tascam Model 2400 — 24-channel analog mixing console with built-in 24x22 USB interface and SD multitrack recorder. This is the studio hub: all mixing, EQ and summing happen here, and it is also the audio interface. Replaces the Focusrite Scarlett. Chosen as a clean, current, buyable hub — under 5k CHF no colored console with per-channel EQ + 8 individual outs exists, so the colour comes from the outboard, not the desk. (Fallback colored desk if ever wanted, used market: Toft ATB-16, Midas Venice, A&H GL2400.)
   - usb -> Apple Studio M4 (per-channel multitrack = dry stems, stereo master = the mix)
   - monitor out L/R -> speakers/monitors L,R
-  - aux / subgroup outs -> MPC record-ins (2500 & 3000) for re-sampling  [exact bus assignment TBD]
-
-- MPC2500
-  - individual outputs 1-8 -> Palmer DI8 -> Tascam channels 1-8
-  - stereo out L/R -> spare Tascam stereo channel (optional)
-  - record in from tascam - details TBD
-
-- MPC3000
-  - individual outputs 1-8 -> Palmer DI8 -> Tascam channels 1-8
-  - stereo out L/R -> spare Tascam stereo channel (optional)
-  - record in from tascam - details TBD
+  - subgroup 1 outs -> MPC record-ins (2000, 2500, 3000) for re-sampling
 
 - MPC2000 
   - only as sample chopper
-  - stereo out L/R -> Tascam stereo channel
+  - stereo out L/R -> Tascam stereo channel 19/20
+  - record in from tascam - subgroup 1
   - will be resampled by either 2500 or 3000
 
+- MPC2500
+  - individual outputs 1-8 -> Palmer DI8 -> Tascam channels 1-8
+  - stereo out L/R ->  Tascam stereo channel 15/16
+  - record in from tascam - subgroup 1
 
-- Technics MK7 -> Ecler Nuo2 phono input 2
-- Teenage Engineering KOII -> Ecler Nuo2 line input 1
-- Ecler Nuo2 main out L/R -> Tascam stereo channel (e.g. 21/22)
+- MPC3000
+  - individual outputs 1-8 -> Palmer DI8 -> Tascam channels 1-8
+  - stereo out L/R -> Tascam stereo channel 17/18
+  - record in from tascam - subgroup 1
+
+
+- Ecler Nuo2
+  - main out L/R -> Tascam stereo channel 13/14
+  - Technics MK7 -> Ecler Nuo2 phono input 2
+  - Teenage Engineering KOII -> Ecler Nuo2 line input 1
 
 - Outboard FX — routed by type: dynamics on channel inserts, ambience and the filter on aux. Each channel has one insert point — chain two boxes externally to share it. Pad/channel layout: kick 1, snare 2, hats 3, bass 4, samples 5-8.
   - SPL Transient Designer (4 ch) — inserts on kick/snare/hats/bass (ch 1-4), transient shaping per drum (prints on the stems)
