@@ -110,6 +110,14 @@ solid board flush on the lid). Open back does the rest.
   - record/sample in from tascam - aux 1
   - will be resampled by either 2500 or 3000
   - 8 individual outs unused for now (mono character-box role); available later if wanted
+  - **16-keygroup sampling template** — a saved program with 16 short "empty" samples on 16
+    keygroups pre-mapped to the 16 Arturia BeatStep pads. Sample fresh chops "into" those
+    keygroups and they land already assigned to pads for instant MPC-style play; then re-sample
+    the result into the 2500/3000. The BeatStep only plays notes/velocity — filter and tune are
+    dialed by hand on the S950 (per keygroup or KGALL).
+  - control: no remote CC for filter or tuning — the S950's MIDI only exposes note/velocity,
+    pitch bend, program change, CC7 (volume) and CC1 (LFO depth). Filter/tune = hardware, by hand.
+    (velocity does drive filter brightness; the BeatStep can't remap an encoder to velocity.)
 
 - MPC2500
   - individual outputs 1-8 -> Palmer Pan 16 -> Tascam channels 1-8
