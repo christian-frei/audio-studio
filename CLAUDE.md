@@ -58,6 +58,16 @@ The S950 uses a single channel rather than the old dry/filtered ch 9 + ch 10 pai
 no permanent side-by-side comparison — it is one channel, switched by the filter bypass. Ch 9
 is free if the parallel dry/filtered pair is ever wanted back.
 
+## Sampling from the computer
+
+Drum breaks that live on the hard disk are chopped in **Serato Sample** on the Mac, then sent
+out for grit rather than used directly: Serato Sample -> Mac out -> **ch 21/22** -> **aux 1**
+-> Akai S950 -> Vermona -> ch 10 -> subgroup 3/4 or 5/6 -> MPC.
+
+Note the conflict with the capture rule: this path needs ch 21/22 **up**, while a USB capture
+needs them **muted** (feedback-loop trap). Same channels, two opposite states — be deliberate
+about which one the desk is in.
+
 ## Capture and mixing
 
 Full workflow in [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md). The
@@ -229,6 +239,8 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 - **Subgroup count** — this routing uses six subgroup busses (1/2, 3/4, 5/6). Worth confirming
   the Model 2400 exposes that many as independent physical outputs.
 - **Ch 9** — the only free channel left.
+- **DAW** — Pro Tools Studio (~200 CHF/yr) is being evaluated against Reaper; Artist is ruled
+  out by its 16-input cap. See [reaper_evaluation.md](reaper_evaluation.md). Nothing migrated.
 
 ## Currently not in use
 

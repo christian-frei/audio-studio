@@ -75,3 +75,4 @@ diagram with `tools/export-pdf.sh`.
 - [manual_mastering_protools_studio.md](manual_mastering_protools_studio.md) — the mastering chain with exact values
 - [protools_mastering_session.md](protools_mastering_session.md) — how the mastering session is laid out, and why it is separate
 - [dbx266xl-reference.md](dbx266xl-reference.md) — DBX 266XL settings for parallel drum glue
+- [reaper_evaluation.md](reaper_evaluation.md) — evaluating Reaper as a Pro Tools Studio replacement (open)
