@@ -314,26 +314,6 @@ bounce.
 
 ---
 
-## Rebuilding the parallel drum blend
-
-Not a master-bus move — this belongs in the multitrack mix session, alongside the rest of the
-balance. Ch 1–3 dry and ch 19/20 crushed are separate files, so the blend is rebuilt from
-scratch: the ratio was in the faders, and the faders were not recorded. The SSL E-Channel on
-the ch 19/20 return is the right tool — carve the parallel copy rather than re-mix the drums.
-Black knob here, not brown; this is a channel, and it is meant to bite.
-
-| Move | Setting | Why |
-|---|---|---|
-| Filters | **HPF 100 Hz** | Stops the crushed copy doubling the kick's low end into mush. The dry kick keeps the weight |
-| HF | **Shelf, 8 kHz, +2 dB** | Brings up room and snare tail — the part worth blending in |
-| LMF | **400 Hz, Q 1.0, −2 dB** | Where boxiness accumulates first in a parallel copy |
-| Dynamics | **Off** | The DBX already compressed this. Twice is mud |
-
-Start by matching the stereo master by ear — that file is the only surviving record of the
-blend that was actually heard.
-
----
-
 ## Bounce checklist
 
 1. Level-matched bypass A/B of the whole chain — better, or just louder? Then the same A/B

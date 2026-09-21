@@ -57,7 +57,7 @@ level-normalised archive. Three things follow at the desk:
    later when the multitrack holds parts that are not in the record.
 3. **The parallel drum blend is re-creatable, not recallable.** Ch 1-3 dry and ch 19/20 crushed
    are separate files, so a ratio can be built later — but not *the* ratio, which lived in the
-   faders. Match the pass-1 stereo master by ear.
+   faders. Rebuilding it is a job for the template; see below.
 
 **Feedback-loop trap.** Ch 21/22 carries the Mac's return. If those channels are up while the
 stereo master is being captured over USB, the DAW output feeds the master which feeds the DAW.
@@ -68,7 +68,8 @@ Pro Tools.
 
 ## The Pro Tools multitrack template
 
-A channel per Tascam channel, each with a **FabFilter Pro-Q 4**, a submix, and a delay bus.
+A channel per Tascam channel, each with a **FabFilter Pro-Q 4**, plus a submix, a delay bus,
+and a **Waves SSL E-Channel** on the ch 19/20 drum-glue return.
 
 **Processing mode: Natural Phase**, same reasoning as the master — linear phase pre-rings, and
 pre-ringing smears the kick and snare transients this record is built on.
@@ -126,6 +127,28 @@ sidechain:
 **Known limitation:** Pro-Q's dynamic bands are program-dependent — threshold and range are
 yours, attack and release are automatic and not exposed. If the duck sounds late or smeared,
 that is the plugin, not the settings, and a dedicated sidechain compressor is the tool.
+
+### The parallel drum blend
+
+Ch 1-3 dry and ch 19/20 crushed arrive as separate files, so the blend is rebuilt here — from
+scratch, since the ratio was in the faders and the faders were not recorded. **Start by
+matching the pass-1 stereo master by ear**; that file is the only surviving record of the
+blend that was actually heard.
+
+The **Waves SSL E-Channel** on the ch 19/20 return is the better tool than Pro-Q for this —
+carve the parallel copy rather than re-mix the drums. Black knob, not brown: this is a channel,
+and it is meant to bite.
+
+| Move | Setting | Why |
+|---|---|---|
+| Filters | **HPF 100 Hz** | Stops the crushed copy doubling the kick's low end into mush. The dry kick keeps the weight |
+| HF | **Shelf, 8 kHz, +2 dB** | Brings up room and snare tail — the part worth blending in |
+| LMF | **400 Hz, Q 1.0, −2 dB** | Where boxiness accumulates first in a parallel copy |
+| Dynamics | **Off** | The DBX already compressed this. Twice is mud |
+
+Bigger moves are fine here than anywhere else in the template — a parallel copy is meant to be
+carved, not flattered. If ch 19/20 up makes the drums *thinner* rather than fatter, the return
+is polarity-flipped; fix that at the desk before trying to EQ around it.
 
 ### The submix
 
@@ -185,7 +208,9 @@ that matter — but it only recalls the half of the mix that happened in the box
 3. Polarity test on the bass before reaching for the duck.
 4. Sub-60 Hz kick layer tuned to the key of the track.
 5. Analog coloring off, unless a level-matched all-on/all-off test on the full mix says otherwise.
-6. Delay return high-passed and ducked.
-7. One plugin owns each problem — no frequency fixed twice.
-8. Mono check before bouncing. Everything is mono at source; the delay return and the XT:C are
+6. Parallel drum blend rebuilt against the pass-1 stereo master, and the ch 19/20 return
+   checked for polarity.
+7. Delay return high-passed and ducked.
+8. One plugin owns each problem — no frequency fixed twice.
+9. Mono check before bouncing. Everything is mono at source; the delay return and the XT:C are
    the only things that can thin out on fold-down.
