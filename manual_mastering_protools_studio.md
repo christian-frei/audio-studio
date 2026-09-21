@@ -22,11 +22,15 @@ DBX weight and the XT:C tails are all printed. The master's job is only: kill su
 control the kick/bass collision, add tape-style glue, and get it loud without flattening the
 drums. Everything else was already done on the desk.
 
-**This is a mastering chain, not a licence to re-mix.** The multitrack is an archive and a
-safety; the mix stays on the Tascam. If the DAW multitrack starts getting faders ridden, the
-desk has quietly become a very expensive preamp. Same reason the chain lives in a separate
-session — a master chain running while the desk is being mixed means every balance decision
-gets made through a limiter.
+**This is a mastering chain, not a mixing one.** Mixing has its own stage and its own session —
+[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) — where the balance, the
+per-channel surgical work and the delay bus live. By the time a stereo file reaches this chain,
+both the tone (printed on the desk) and the balance (rebuilt in the multitrack session) are
+settled. Anything fixed here that should have been fixed there gets applied to the whole record
+at once, which is why it rarely works.
+
+Same reason the chain lives in its own session: a master chain running while a mix is being
+built means every balance decision gets made through a limiter.
 
 ### Capture map
 
@@ -312,11 +316,11 @@ bounce.
 
 ## Rebuilding the parallel drum blend
 
-The one thing worth doing in the multitrack session rather than on the desk. Ch 1–3 dry and
-ch 19/20 crushed are separate files, so the blend can be rebuilt — from scratch, since the
-ratio was in the faders and the faders were not recorded. The SSL E-Channel on the ch 19/20
-return is the right tool: carve the parallel copy rather than re-mix the drums. Black knob
-here, not brown — this is a channel, and it is meant to bite.
+Not a master-bus move — this belongs in the multitrack mix session, alongside the rest of the
+balance. Ch 1–3 dry and ch 19/20 crushed are separate files, so the blend is rebuilt from
+scratch: the ratio was in the faders, and the faders were not recorded. The SSL E-Channel on
+the ch 19/20 return is the right tool — carve the parallel copy rather than re-mix the drums.
+Black knob here, not brown; this is a channel, and it is meant to bite.
 
 | Move | Setting | Why |
 |---|---|---|

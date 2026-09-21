@@ -19,13 +19,14 @@ without noticing — the kick gets mixed softer because the limiter already make
 the top stays dull because the SSL shelf is adding air. Bypass the chain later and the mix
 underneath is thin and wrong.
 
-Same rule as the daw-less one, a floor up: the mix belongs to the Tascam, the master belongs to
-a session whose only job is the master.
+One stage, one session, one job. The tone belongs to the desk, the balance to the multitrack
+session, the master to a session whose only job is the master — and none of the three should be
+auditioned through the next one's processing.
 
 **Being a beatmaker rather than a mastering engineer argues for the split, not against it.** One
-stereo track, one chain, one meter, one reference is the simpler thing to learn. Staring at 20
-channels of multitrack, the temptation to "fix it at the master" is constant — and that is the
-one thing mastering cannot do.
+stereo track, one chain, one meter, one reference is the simpler thing to learn — and with the
+multitrack open in its own session, the temptation to "fix it at the master" has somewhere
+better to go.
 
 It is also the clean handoff: when a beat gets picked up, the deliverable already exists as a
 discrete stereo file at a known level with no chain baked in.
@@ -87,11 +88,12 @@ to hear the master.
 
 ## What does not belong here
 
-- **The multitrack.** It is pre-fader, level-normalised and holds no balance — an archive, not
-  a mixing environment. It stays with the tracking template.
-- **Moves bigger than about a dB.** Those are mix moves; they belong on the Tascam, which means
-  re-tracking — cheap, because the MPC project reloads to identical 8-out audio.
-- **The parallel drum blend.** Adjustable after the fact, but in the multitrack session.
+- **The multitrack.** It has its own session — see
+  [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md).
+- **Moves bigger than about a dB.** Those are mix moves. A balance problem goes to the
+  multitrack session; a tonal one goes back to the desk, which means re-tracking — cheap,
+  because the MPC project reloads to identical 8-out audio.
+- **The parallel drum blend.** Rebuilt in the multitrack session, not here.
 
 ---
 

@@ -1,16 +1,22 @@
 # Boombap Sampling Home Studio
 
 Hardware-first home studio for making boombap hip-hop beats. Vinyl sampling through Akai MPCs,
-mixed daw-less on a Tascam Model 2400, mastered in Pro Tools Studio.
+sound-modeled on a Tascam Model 2400 and outboard, mixed and mastered in Pro Tools Studio.
+
+**The division of labour:** the Tascam and the analog gear do the sound modeling — EQ,
+transient shaping, glue, reverb — decided in the moment and printed on the way in, where it
+cannot be changed afterwards. The DAW does the mixing: balance, surgical corrections, delays.
+Mastering is a third stage in its own session.
 
 ## Workflow
 
 1. Sample from vinyl (Technics MK7 → Ecler Nuo2 → Tascam), into the MPC directly or via the Akai S950
 2. Build the beat on one MPC per project (MPC2500 or MPC2000 — never both)
 3. Track the 8 individual MPC outs through the Palmer Pan 16 into Tascam ch 1-8
-4. Mix on the Tascam — **daw-less**: EQ, balance and summing all on the desk
-5. Capture over USB **post-FX**, so the desk EQ prints: stereo master every time, multitrack when a beat gets picked up
-6. Master in Pro Tools Studio
+4. Shape the sound on the Tascam and the outboard — EQ, SPL, DBX glue, XT:C
+5. Capture over USB **post-FX and pre-fader**: the tone prints, the balance does not. Stereo master every beat, multitrack when a beat gets picked up
+6. Mix in Pro Tools from the multitrack — balance, surgical Pro-Q, delay bus
+7. Master in Pro Tools Studio, in a separate session
 
 ## Signal Chain
 
@@ -52,11 +58,14 @@ graph TD
   because the dry channels keep the transients.
 - **Sample-sends are subgroups, not auxes.** Subgroup 3/4 → MPC2000 and 5/6 → MPC2500 give a
   stereo, post-fader feed with its own level control, and leave three auxes free.
-- **Capture is post-FX.** The desk EQ and the SPL transient shaping print on the recording.
-  The multitrack is deliberately not a set of dry stems.
+- **Capture is post-FX and pre-fader.** The desk EQ and the SPL transient shaping print; the
+  fader positions do not. The multitrack is deliberately not a set of dry stems, and it arrives
+  level-normalised at ≈ −10 dBFS per channel with the balance still to be built.
 
 ## Docs
 
-- [CLAUDE.md](CLAUDE.md) — full routing, gear list, rack layout, capture and recall
+- [CLAUDE.md](CLAUDE.md) — full routing, gear list, rack layout, capture constraints
+- [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) — the mixing stage: capture, the Pro Tools template, kick/bass ducking, delay bus
 - [manual_mastering_protools_studio.md](manual_mastering_protools_studio.md) — the mastering chain with exact values
+- [protools_mastering_session.md](protools_mastering_session.md) — how the mastering session is laid out, and why it is separate
 - [dbx266xl-reference.md](dbx266xl-reference.md) — DBX 266XL settings for parallel drum glue

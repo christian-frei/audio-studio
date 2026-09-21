@@ -11,9 +11,13 @@ mixing console being the deliberate exception. One beat at a time on one MPC; no
 mid-project.
 
 When a beat is good enough — basically a few loops — it is tracked through the MPC's 8
-individual outs into the Tascam Model 2400. Mixing, EQ and summing happen on the Tascam
-(hardware, daw-less); Pro Tools is for mastering only. Details in
-[Daw-less mixdown, capture and recall](#daw-less-mixdown-capture-and-recall).
+individual outs into the Tascam Model 2400.
+
+**The division of labour:** the Tascam and the analog gear do the sound modeling — EQ,
+transient shaping, glue, reverb — and that is printed on the way in and cannot be changed
+afterwards. **The DAW is for mixing**: balance, surgical corrections and time-based effects.
+Mastering is a third stage again, in its own session. See
+[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md).
 
 ### Medium fidelity
 
@@ -54,50 +58,25 @@ The S950 uses a single channel rather than the old dry/filtered ch 9 + ch 10 pai
 no permanent side-by-side comparison — it is one channel, switched by the filter bypass. Ch 9
 is free if the parallel dry/filtered pair is ever wanted back.
 
-## Daw-less mixdown, capture and recall
+## Capture and mixing
 
-All mixing, EQ and summing happen on the Tascam; Pro Tools is only for mastering. The Tascam is
-mixer and USB interface in one, so the mix and the multitrack come off a single USB cable with
-no rewiring — the split happens inside the box.
+Full workflow in [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md). The
+parts that constrain the routing:
 
-**Post-FX capture is deliberate.** The per-channel USB sends are post-FX so the Tascam's channel
-EQ prints on the recording — the desk EQ is part of the sound, not something to re-do later. So
-the multitrack is **not** a set of dry stems: ch 1-3 arrive with the SPL Transient Designer and
-the EQ already printed, ch 17/18 carry the XT:C return EQ'd. Committal — there is no undo on a
-printed EQ curve — and that is the trade accepted in exchange for never mixing in the box.
-
-**Those sends are also pre-fader** (post-EQ, post-insert, pre-fader — confirmed by riding a
-fader against both Pro Tools meters). The EQ and transient shaping print; the **balance does
-not**. Every channel is therefore tracked at a uniform **≈ -10 dBFS**, making the multitrack a
-level-normalised archive rather than a mix — the leveling is recreated at the mixing step, and
-the only file holding the balance actually heard is the pass-1 stereo master. Two consequences
-at the desk: a fader cannot fix a hot multitrack channel (only the trim moves the recorded
-level, and it moves the mix with it), and channels faded out of the mix still record at full
-level.
-
-Two-pass capture (nothing rewired between passes; can be a single take):
-- **Pass 1 — the mix (every beat):** arm the Tascam stereo master, EQ/balance on the desk,
-  stereo bus -> 2-track -> master in Pro Tools.
-- **Pass 2 — the multitrack (only when a beat gets picked up):** arm the per-channel USB
-  multitrack and record. Can be done any time later.
-
-Because the DBX drum glue returns on its own pair (ch 19/20) rather than being an insert, the
-dry drums on ch 1-3 and the compressed copy land in Pro Tools as separate tracks, so a
-dry/crushed ratio can still be built after the fact. **Re-creatable, not recallable** — the
-ratio itself lived in the faders, so the stereo master and a photo of the desk are the only
-record of the blend that was heard.
-
-Recall principle — the **MPC project is the archive, not the mixer**: the saved sequence,
-samples, program and out-routing reload to identical 8-out audio, so the multitrack is always
-re-recordable; only the analog pass (fader balance, EQ curves, SPL and DBX knob positions) is
-unrecallable, and the fader balance is not even in the multitrack. **Save every MPC project +
-its samples religiously**, and if a re-track is ever likely, photograph the desk and the
-outboard front panels before tearing the session down — that photo is the only "session recall"
-a daw-less setup has.
-
-**Feedback-loop trap:** ch 21/22 carries the Mac's return. If those channels are up while the
-stereo master is being captured over USB, the DAW output feeds the master which feeds the DAW.
-Keep 21/22 muted (or out of the master) during capture, and input monitoring off in Pro Tools.
+- **Post-FX, pre-fader.** The per-channel USB sends carry the Tascam EQ and the SPL shaping;
+  they do not carry the fader positions. Tone prints, balance does not.
+- **Uniform ≈ -10 dBFS.** Every channel is tracked at a converter level, not a mix level. The
+  trim sets what is recorded, the fader does not — so a fader cannot fix a hot multitrack
+  channel, and channels faded out of the desk mix still record at full level.
+- **Two passes, nothing rewired.** Pass 1 = the Tascam stereo master (every beat). Pass 2 = the
+  per-channel multitrack (only when a beat gets picked up).
+- **Feedback-loop trap.** Ch 21/22 carries the Mac's return. With those channels up during a
+  USB capture the DAW output feeds the master which feeds the DAW. Mute 21/22 for both passes
+  and keep input monitoring off in Pro Tools.
+- **Recall.** The MPC project is the archive, not the mixer — it reloads to identical 8-out
+  audio, so the multitrack is always re-recordable. The analog pass is not recallable: **save
+  every MPC project + its samples**, and photograph the desk and outboard front panels before
+  tearing down a session that might need a re-track.
 
 ## Racks and cooling
 
@@ -136,13 +115,14 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 - Apple Studio M4 — runs **Pro Tools Studio**, the only DAW (no Ableton). Returns to the desk
   on ch 21/22 along with everything else coming out of the Mac. Mastering plugins: Pro Tools
   stock (Pro Multiband Dynamics, Pro Compressor, Pro Limiter, Reel Tape Saturation) plus
-  **FabFilter Pro-Q 4** and the **Waves SSL E-Channel** strip. Chain and settings in
-  [manual_mastering_protools_studio.md](manual_mastering_protools_studio.md); session layout in
-  [protools_mastering_session.md](protools_mastering_session.md).
+  **FabFilter Pro-Q 4** and the **Waves SSL E-Channel** strip. Mixing template in
+  [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md); mastering chain in
+  [manual_mastering_protools_studio.md](manual_mastering_protools_studio.md) and its session
+  layout in [protools_mastering_session.md](protools_mastering_session.md).
 
 - Tascam Model 2400 — 24-channel analog console with built-in 24x22 USB interface and SD
-  multitrack recorder. The studio hub: all mixing, EQ and summing happen here, and it is also
-  the audio interface. Replaces the Focusrite Scarlett. Chosen as a clean, current, buyable
+  multitrack recorder. The studio hub: every tonal decision is made and printed here, and it is
+  also the audio interface. Replaces the Focusrite Scarlett. Chosen as a clean, current, buyable
   hub — under 5k CHF no colored console with per-channel EQ + 8 individual outs exists, so the
   colour comes from the outboard, not the desk. (Fallback colored desk if ever wanted, used
   market: Toft ATB-16, Midas Venice, A&H GL2400.)

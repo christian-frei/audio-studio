@@ -1,0 +1,191 @@
+# Mixing — what the desk commits, what Pro Tools decides
+
+The Tascam commits the **tone**; Pro Tools decides the **balance**. That split is forced by the
+capture itself: the per-channel USB sends are post-EQ and **pre-fader**, so the EQ, the SPL
+transient shaping, the DBX glue and the XT:C tails all print, and the fader positions do not.
+Something has to rebuild the balance afterwards, and that is what the Pro Tools multitrack
+template is for.
+
+Mastering is a separate stage again — chain in
+[manual_mastering_protools_studio.md](manual_mastering_protools_studio.md), session layout in
+[protools_mastering_session.md](protools_mastering_session.md). Routing and channel map in
+[CLAUDE.md](CLAUDE.md).
+
+**This is not a daw-less setup, and it is not trying to be.** The Tascam and the analog gear
+are there for sound modeling that cannot be changed afterwards — decided in the moment, on
+hardware, and printed. The DAW is for mixing. Both halves keep their point: nothing tonal gets
+deferred to a plugin, and nothing about the balance gets frozen before it is ready.
+
+---
+
+## Two routes to a mix
+
+| | Route A — desk mix | Route B — multitrack mix |
+|---|---|---|
+| Source | Pass 1 stereo capture | Pass 2 per-channel multitrack |
+| Balance | Tascam faders, printed into the stereo file | Rebuilt in the Pro Tools template |
+| When | Every beat. Reference bounces, sending a rapper something | When a beat gets picked up and has to hold up |
+| Next step | Straight to the mastering session | Bounce a stereo mix, then the mastering session |
+
+Route A is the fast path and most beats never leave it. Route B exists because the multitrack
+is captured anyway, and because a beat that is actually going somewhere deserves the surgical
+pass that a live desk mix cannot do.
+
+---
+
+## Capture and gain staging
+
+Two-pass capture, nothing rewired between passes — it can be a single take:
+
+- **Pass 1 — the mix (every beat):** arm the Tascam stereo master. EQ and balance on the desk,
+  stereo bus → 2-track → Pro Tools.
+- **Pass 2 — the multitrack (when a beat gets picked up):** arm the per-channel USB multitrack
+  and record. Can be done any time later.
+
+**Post-FX capture is deliberate.** The channel EQ prints — the desk EQ is part of the sound,
+not something to re-do later. So the multitrack is **not** a set of dry stems: ch 1-3 arrive
+with the SPL Transient Designer and the EQ already on them, ch 17/18 carry the XT:C return
+EQ'd. Committal, and that is the trade.
+
+**Pre-fader is the other half.** The balance does not print. Every channel is therefore tracked
+at a uniform **≈ −10 dBFS** — a converter level, not a mix — and the multitrack arrives as a
+level-normalised archive. Three things follow at the desk:
+
+1. **A fader cannot fix a hot multitrack channel.** Only the trim moves the recorded level, and
+   it moves the desk mix with it. Set trim for the converter, balance with the fader.
+2. **Channels faded out of the mix still record at full level.** Good as archive, confusing
+   later when the multitrack holds parts that are not in the record.
+3. **The parallel drum blend is re-creatable, not recallable.** Ch 1-3 dry and ch 19/20 crushed
+   are separate files, so a ratio can be built later — but not *the* ratio, which lived in the
+   faders. Match the pass-1 stereo master by ear.
+
+**Feedback-loop trap.** Ch 21/22 carries the Mac's return. If those channels are up while the
+stereo master is being captured over USB, the DAW output feeds the master which feeds the DAW.
+Keep 21/22 muted (or out of the master) during both passes, and input monitoring off in
+Pro Tools.
+
+---
+
+## The Pro Tools multitrack template
+
+A channel per Tascam channel, each with a **FabFilter Pro-Q 4**, a submix, and a delay bus.
+
+**Processing mode: Natural Phase**, same reasoning as the master — linear phase pre-rings, and
+pre-ringing smears the kick and snare transients this record is built on.
+
+**Surgical only.** The musical EQ already happened on the desk and is printed. A Pro-Q instance
+here is for a specific collision, not for tone. If a channel wants a broad +3 dB shelf, that is
+a sign the desk pass was wrong and the honest fix is a re-track — which is cheap, because the
+MPC project reloads to identical 8-out audio.
+
+**Most channels should end up with the plugin doing nothing.** An instance on every channel is
+fine as a template — it is there when needed — but a template is not a to-do list.
+
+### Analog coloring — off by default
+
+Leave it off on every channel. The reasoning is the same as the SSL's ANALOG switch on the
+master: the 12-bit S950, the MPC converters, the turntable and the Ecler already supply more
+harmonic content than any model adds, and the whole architecture exists to get colour from
+hardware rather than plugins.
+
+Per instance it is inaudible. Across 22 instances it compounds — mostly as low-level harmonic
+hash in the top octaves, which is exactly where 12-bit aliasing already lives. It also costs
+CPU 22 times over for an effect that does not survive a fair comparison.
+
+If it is ever worth testing, test it honestly: **all instances on vs. all instances off, on the
+full mix, level-matched.** One channel soloed proves nothing. And if the flavour is wanted, put
+a single instance on the submix — one audible decision rather than 22 invisible ones.
+
+### The kick / bass collision
+
+The most useful thing in the whole template, and the one that justifies per-channel Pro-Q.
+
+**First, work out which problem it actually is.** Masking and cancellation look the same on the
+meter and need opposite fixes:
+
+- **Polarity test.** Flip polarity on the bass channel and listen to the low end. If it gets
+  *louder*, the two were cancelling — ducking will not fix that, and the real fix is timing or
+  tuning. If it gets thinner, they were summing fine and the problem is masking, which is what
+  the duck is for.
+- **Tuning.** Cancellation is a live risk here specifically because every MPC out is mono and
+  lands dead centre — two near-sine low sources at close frequencies will beat. If the kick
+  carries a deliberate sub-60 Hz layer, that layer has a pitch: tune it to the key of the track
+  rather than leaving it wherever the sample fell.
+
+**Then the duck**, on the bass channel's Pro-Q 4, keyed from the kick via the external
+sidechain:
+
+| Param | Value | Why |
+|---|---|---|
+| Band type | **Dynamic bell**, external sidechain from ch 1 | Only moves when the kick hits; bass is untouched in between |
+| Frequency | **The kick's fundamental** — sweep 45–70 Hz with the kick soloed | Guessing wastes the move. It is wherever that kick sample actually sits |
+| Q | **1.0–1.5** | Wide enough to catch the fundamental, narrow enough to leave the rest of the bass |
+| Range | **−2 to −4 dB** | Past −6 dB it stops being invisible and starts pumping |
+| Second band | *Often needed* — **90–140 Hz, static −1 dB** | Where the bass's body masks the kick's punch. Static beats dynamic here |
+
+**Known limitation:** Pro-Q's dynamic bands are program-dependent — threshold and range are
+yours, attack and release are automatic and not exposed. If the duck sounds late or smeared,
+that is the plugin, not the settings, and a dedicated sidechain compressor is the tool.
+
+### The submix
+
+One Pro-Q instance owning a collective problem — the place for the frequency that is wrong
+across a whole group rather than on one channel.
+
+The rule that keeps it useful: **one plugin owns each problem.** If 300 Hz is being cut on four
+channels *and* on the submix, one of those decisions is wrong. Fix it where the problem is —
+per-channel if one source causes it, on the submix if it only exists once things are summed.
+
+Gentle moves. Anything past a dB or two here is a mix problem wearing an EQ costume.
+
+### The delay bus
+
+For the chopped samples, to fill space that a mono, mostly-dry record leaves open.
+
+| Param | Setting | Why |
+|---|---|---|
+| Time | **1/8 dotted**, or **1/4 triplet** against the swing | The dotted eighth is the classic; triplets sit better under heavy swing |
+| Short option | **80–140 ms slap**, no tempo sync | For snare and one-shot chops — depth without a rhythmic figure |
+| Return HPF | **300–500 Hz** | Keeps repeats out of the kick and bass. The single most important setting here |
+| Return LPF | **3–6 kHz** | Dulls the repeats so they sit behind the dry — and hides 12-bit hash in the tails |
+| Feedback | **15–25 %** | Enough for two or three audible repeats |
+| Send | **Post-fader** | So the delay follows the balance being rebuilt, rather than drifting off it |
+
+**Duck the delay under the dry.** A dynamic band or a compressor on the return, keyed from the
+send, keeps the repeats out of the way while the chop is playing and lets them bloom in the
+gaps. Without it the delay is just mud with a rhythm.
+
+**This is the width.** Every MPC out is mono and lands centre, so a stereo or ping-pong delay
+return is one of the very few genuine width tools on the record — the same argument as the
+side-channel air band on the master. Keep the low end out of it (that is what the HPF is for)
+and the mono fold-down stays safe.
+
+---
+
+## Recall
+
+The **MPC project is the archive, not the mixer.** The saved sequence, samples, program and
+out-routing reload to identical 8-out audio, so the multitrack is always re-recordable. Only
+the analog pass is unrecallable — fader balance, EQ curves, SPL and DBX knob positions — and
+the fader balance is not even in the multitrack.
+
+So: **save every MPC project and its samples religiously.** If a re-track is ever likely,
+photograph the desk and the outboard front panels before tearing the session down. That photo
+is the only session recall a hardware mix has.
+
+The Pro Tools session recalls itself, which is precisely why Route B is worth having for beats
+that matter — but it only recalls the half of the mix that happened in the box.
+
+---
+
+## Checklist
+
+1. Trim set for ≈ −10 dBFS per channel **before** balancing with faders.
+2. Ch 21/22 muted for both capture passes.
+3. Polarity test on the bass before reaching for the duck.
+4. Sub-60 Hz kick layer tuned to the key of the track.
+5. Analog coloring off, unless a level-matched all-on/all-off test on the full mix says otherwise.
+6. Delay return high-passed and ducked.
+7. One plugin owns each problem — no frequency fixed twice.
+8. Mono check before bouncing. Everything is mono at source; the delay return and the XT:C are
+   the only things that can thin out on fold-down.
