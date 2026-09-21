@@ -53,7 +53,9 @@ graph TD
 
 The `.drawio` file has two pages: **Overview** (the physical signal chain above) and
 **Mixing and mastering** (the three stages inside the box — capture passes, the mixing session,
-the mastering session).
+the mastering session). Both are combined onto one A3 sheet in
+[studio-signal-chain.pdf](studio-signal-chain.pdf) for printing; regenerate it after editing the
+diagram with `tools/export-pdf.sh`.
 
 ## Key routing decisions
 
