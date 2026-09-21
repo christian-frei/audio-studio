@@ -51,6 +51,10 @@ graph TD
     T -->|monitor out| MON[Monitors]
 ```
 
+The `.drawio` file has two pages: **Overview** (the physical signal chain above) and
+**Mixing and mastering** (the three stages inside the box — capture passes, the mixing session,
+the mastering session).
+
 ## Key routing decisions
 
 - **Drums are glued in parallel, not inserted.** Ch 1-3 feed subgroup 1/2 → DBX 266XL → back

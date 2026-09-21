@@ -61,7 +61,7 @@
           <mxGeometry x="1090" y="430" width="210" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="mac" value="Apple Studio M4&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Pro Tools Studio — &lt;b&gt;mastering only&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1">
+        <mxCell id="mac" value="Apple Studio M4&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Pro Tools Studio — mixing + mastering&lt;br&gt;&lt;i&gt;detail on the &amp;quot;Mixing and mastering&amp;quot; tab&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1">
           <mxGeometry x="620" y="760" width="210" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mon" value="Monitors" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" vertex="1" parent="1">
@@ -156,6 +156,101 @@
         <mxCell id="e_mon" value="monitor out L/R" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=0.15;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="tascam" target="mon">
           <mxGeometry relative="1" as="geometry">
             <Array as="points"><mxPoint x="633" y="720" /><mxPoint x="460" y="720" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Mixing and mastering" id="d2">
+    <mxGraphModel dx="1700" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1700" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="stage_analog" value="&lt;b&gt;Tascam 2400 + outboard&lt;/b&gt;&lt;br&gt;&lt;i&gt;sound modeling — printed, cannot be changed&lt;/i&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;channel EQ · SPL transients&lt;br&gt;DBX parallel glue · XT:C tails&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="320" height="110" as="geometry" />
+        </mxCell>
+
+        <mxCell id="pass1" value="&lt;b&gt;Pass 1 — stereo master&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;post-fader: the desk balance as played&lt;br&gt;captured every beat&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="360" width="320" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="pass2" value="&lt;b&gt;Pass 2 — 22-ch multitrack&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;post-FX, &lt;b&gt;pre-fader&lt;/b&gt; · uniform ≈ -10 dBFS&lt;br&gt;tone printed, balance not&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=10;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="40" y="490" width="320" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mixbox" value="&lt;b&gt;Pro Tools — MIXING session&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;i&gt;the balance lives here&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=6;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;fontStyle=0;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="440" y="300" width="500" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="mix_ch" value="&lt;b&gt;Per-channel FabFilter Pro-Q 4&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Natural Phase · surgical only&lt;br&gt;most channels end up doing nothing&lt;br&gt;&lt;b&gt;Analog coloring OFF on all channels&lt;/b&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="465" y="365" width="450" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="mix_duck" value="&lt;b&gt;Kick / bass duck&lt;/b&gt; — on the bass channel&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;dynamic bell, external sidechain from ch 1&lt;br&gt;kick fundamental (sweep 45-70 Hz) · Q 1.0-1.5 · range -2 to -4 dB&lt;br&gt;&lt;i&gt;polarity-test the bass first — cancellation needs a different fix&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="465" y="455" width="450" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="mix_ssl" value="&lt;b&gt;Waves SSL E-Channel on ch 19/20&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;rebuild the parallel drum blend against the pass-1 master&lt;br&gt;HPF 100 · HF +2 @ 8k · LMF -2 @ 400 · dynamics off&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="465" y="550" width="450" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mix_sub" value="&lt;b&gt;Submix&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;one Pro-Q owns the&lt;br&gt;collective problem&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="465" y="635" width="215" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mix_delay" value="&lt;b&gt;Delay bus&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;1/8 dotted · HP 300-500&lt;br&gt;LP 3-6k · ducked · the width&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="700" y="635" width="215" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mix_out" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;bounce a stereo mix — peaks -10 to -6 dBFS&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="465" y="720" width="450" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mastbox" value="&lt;b&gt;Pro Tools — MASTERING session&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;i&gt;its own session · chain on an aux, never the master fader&lt;/i&gt;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=1;arcSize=6;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=14;verticalAlign=top;spacingTop=8;" vertex="1" parent="1">
+          <mxGeometry x="1040" y="140" width="470" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="mast_track" value="&lt;b&gt;Stereo track — the mix&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;fader at unity, no plugins → bus&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="210" width="420" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mast_chain" value="&lt;b&gt;AUX — the chain&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;1&amp;nbsp; FabFilter Pro-Q 4 — HP 30, side HP 120&lt;br&gt;2&amp;nbsp; Pro Multiband Dynamics — 90 / 350 / 6k&lt;br&gt;3&amp;nbsp; SSL E-Channel — EQ only, DYN out&lt;br&gt;4&amp;nbsp; Reel Tape Saturation — 15 IPS&lt;br&gt;5&amp;nbsp; Pro Compressor — sidechain HPF 100&lt;br&gt;6&amp;nbsp; Pro Limiter — ceiling -1.0 dBTP&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;align=left;spacingLeft=12;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="285" width="420" height="145" as="geometry" />
+        </mxCell>
+        <mxCell id="mast_ref" value="&lt;b&gt;Reference track&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;straight to the output — &lt;b&gt;bypasses the chain&lt;/b&gt;&lt;br&gt;gain-matched, or the comparison is meaningless&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="450" width="420" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="mast_meter" value="&lt;b&gt;Master fader — metering only&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;LUFS / true peak / PLR 8-10 dB&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="535" width="420" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="mast_short" value="&lt;b&gt;The short chain — usually the whole job&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 11px;&quot;&gt;Pro-Q 4 → SSL E-Channel → Pro Limiter&lt;br&gt;add the rest only when a specific problem asks&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f5f5f5;strokeColor=#999999;fontSize=12;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="610" width="420" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="mast_out" value="&lt;font style=&quot;font-size: 11px;&quot;&gt;&lt;b&gt;Release master&lt;/b&gt; -11 LUFS · -1.0 dBTP · 24-bit WAV&lt;br&gt;&lt;b&gt;Rapper reference&lt;/b&gt; -9 LUFS, same chain&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="1065" y="695" width="420" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2notes" value="&lt;b&gt;Three stages, three places&lt;/b&gt;&lt;br&gt;• Analog = sound modeling, printed, unchangeable&lt;br&gt;• Mixing session = balance, surgical EQ, time-based FX&lt;br&gt;• Mastering session = its own session, its own file&lt;br&gt;&lt;br&gt;&lt;b&gt;Never audition one stage through the next one&apos;s processing.&lt;/b&gt;&lt;br&gt;A master chain running while a mix is built means every&lt;br&gt;balance decision gets made through a limiter.&lt;br&gt;&lt;br&gt;• Route A is the fast path — most beats never leave it&lt;br&gt;• Route B only when a beat has to hold up&lt;br&gt;• ch 21/22 muted during both capture passes&lt;br&gt;• A tonal problem goes back to the desk = a re-track,&lt;br&gt;&amp;nbsp;&amp;nbsp; which is cheap: the MPC project reloads identically" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#ffffff;strokeColor=#666666;fontSize=12;align=left;verticalAlign=top;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="40" y="610" width="360" height="230" as="geometry" />
+        </mxCell>
+
+        <mxCell id="p2title" value="&lt;b&gt;From the desk to the master&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size: 12px;&quot;&gt;The Tascam and the analog gear do the sound modeling, printed and unchangeable. The DAW does the mixing.&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="900" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e_p1" value="stereo bus → 2-track" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;" edge="1" parent="1" source="stage_analog" target="pass1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_p2" value="per-channel USB" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;exitX=0.15;exitY=1;exitDx=0;exitDy=0;entryX=0.15;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="stage_analog" target="pass2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="88" y="470" /></Array>
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_routeA" value="&lt;b&gt;Route A&lt;/b&gt; — every beat&lt;br&gt;reference bounces, quick turnarounds" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;strokeColor=#82b366;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.13;entryDx=0;entryDy=0;" edge="1" parent="1" source="pass1" target="mastbox">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="400" y="400" /><mxPoint x="400" y="224" /></Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_routeB" value="&lt;b&gt;Route B&lt;/b&gt; — when a beat gets picked up" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;strokeColor=#6c8ebf;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="pass2" target="mixbox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_mix2mast" value="stereo mix" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=11;strokeColor=#6c8ebf;strokeWidth=2;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="mixbox" target="mastbox">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points"><mxPoint x="990" y="540" /></Array>
           </mxGeometry>
         </mxCell>
 
