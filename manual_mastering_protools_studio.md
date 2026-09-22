@@ -104,6 +104,32 @@ broken masters.
 If a sub-heavy kick is part of the sound, move band 1 to **28 Hz** so the deliberate sub-60 Hz
 layer from the MPC survives. Sweep it while soloing the kick.
 
+### Masking vs cancellation — band 3 only fixes one of them
+
+Both sound like a weak low end. They need opposite responses.
+
+**Masking** is two sounds sharing a band at the same moment. The louder one hides the quieter
+one. Both are still there. Duck one and the other comes through. That is band 3's whole job.
+
+**Cancellation** is two sounds at the same frequency arriving out of phase. They subtract. The
+energy is gone, not hidden. Duck one and even less is left.
+
+**Telling them apart here is hard, and that is the point.** The master is one summed stereo
+file — the kick and the bass cannot be separated any more. Two signs point to cancellation: the
+low end reads loud on the meter but thin on the speakers, and it gets *weaker* at the moments
+the bass and the kick land together. Masking sounds the opposite — plenty of energy, the kick
+just buried in it.
+
+**Cancellation is not a mastering problem.** Do not reach for band 3. Go back to the multitrack
+session, where the kick and the bass are still separate files, and run the polarity test in
+[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md). The real fixes live
+upstream: polarity, timing, or tuning the sub-60 Hz layer to the key of the track. A re-track is
+cheap and honest; a dynamic band on a cancelling low end is neither.
+
+This is a live risk on this record specifically. Every MPC out is mono and lands dead centre,
+so the kick and the bass are two near-sine sources in the same place, with nothing but their
+phase relationship keeping them apart.
+
 **Why the multiband still exists after this.** Pro-Q's dynamic bands are program-dependent —
 threshold and range are yours, attack and release are automatic and not exposed. Pro Multiband
 Dynamics gives actual attack and release numbers, which is what the tempo-locked sub band
