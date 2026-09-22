@@ -114,7 +114,16 @@ a single instance on the submix — one audible decision rather than 22 invisibl
 The most useful thing in the whole template, and the one that justifies per-channel Pro-Q.
 
 **First, work out which problem it actually is.** Masking and cancellation look the same on the
-meter and need opposite fixes:
+meter and need opposite fixes.
+
+**Masking** is two sounds sharing a band at the same moment. The louder one hides the quieter
+one. Both are still there. Duck one and the other comes through — that is what the duck below
+is for.
+
+**Cancellation** is two sounds at the same frequency arriving out of phase. They subtract. The
+energy is gone, not hidden. Duck one and even less is left.
+
+Then find out which one you have:
 
 - **Polarity test.** Flip polarity on the bass channel and listen to the low end. If it gets
   *louder*, the two were cancelling — ducking will not fix that, and the real fix is timing or
