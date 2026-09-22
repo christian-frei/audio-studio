@@ -173,6 +173,17 @@ per-channel if one source causes it, on the submix if it only exists once things
 
 Gentle moves. Anything past a dB or two here is a mix problem wearing an EQ costume.
 
+**Nothing else belongs here.** Not bus compression — that already happened, in hardware, as the
+DBX on subgroup 1/2 returning parallel on ch 19/20, and doing it again in the box is
+compressing twice. Not saturation — the analog-coloring section rules it out, with the single
+level-matched instance above as the only exception. And not a safety limiter; see
+[Monitor protection](#monitor-protection) for why that one has to stay out of the signal path
+entirely.
+
+The submix's other job is not an effect at all: it is the **level checkpoint**. The bounce has
+to leave the mix peaking **−10 to −6 dBFS** for the mastering session. That is a fader, not a
+plugin.
+
 ### The delay bus
 
 For the chopped samples, to fill space that a mono, mostly-dry record leaves open.
@@ -194,6 +205,48 @@ gaps. Without it the delay is just mud with a rhythm.
 return is one of the very few genuine width tools on the record — the same argument as the
 side-channel air band on the master. Keep the low end out of it (that is what the HPF is for)
 and the mono fold-down stays safe.
+
+---
+
+## Monitor protection
+
+A safety limiter is worth having, and **the one place it must not go is the signal path.**
+
+- **Not on the submix.** It would print into the bounce, and it only sees what is routed
+  through it. A limiter there is a mix decision wearing protection's clothes.
+- **Not on the master fader.** Master FX are included in a render — in Reaper by default, and
+  in Pro Tools a master fader insert is in the bounce path too. That ships a limited mix into
+  the mastering session invisibly, which is exactly the "fix it at the master" move the
+  separate-session rule exists to prevent.
+- **On Reaper's Monitoring FX chain** (View → Monitoring FX). It sits after the master, feeds
+  the hardware output only, and is not part of an offline render. This is what it is for, and
+  Pro Tools has no equivalent — so it is a genuine point in Reaper's favour, listed as test 10
+  in [reaper_evaluation.md](reaper_evaluation.md) rather than assumed.
+
+| Slot | Setting | Why |
+|---|---|---|
+| 1 — subsonic filter | **HPF 20 Hz** | DC offset and subsonic thumps kill woofers more reliably than loud music does. Ahead of the limiter, so it is not what the limiter is reacting to |
+| 2 — limiter | **ReaLimit** or Pro-L 2, ceiling **−6 dBFS**, no gain | Mixes bounce at −10 to −6 dBFS peak, so this never engages during normal work — but the full-scale accident is ~10 dB louder, and it catches that |
+
+**If it shows gain reduction while you are just mixing, the ceiling is wrong**, not the mix.
+The meter resting at 0 is the whole point; a safety limiter that works every day is a
+compressor nobody decided to use.
+
+### What this does not cover
+
+The loudest events in this room never pass through the DAW, so the monitoring chain does
+nothing for any of them:
+
+- the **ch 21/22 feedback loop** — the most dangerous thing in the setup, and it is analog, at
+  the desk master
+- needle drops and cueing the Technics into the Ecler
+- patching a jack with a channel up, an MPC pad at full, an S950 glitch
+
+Protection for those lives after the Tascam monitor out. Before buying anything for it, check
+the two things that may already handle it: whether the monitors have their own protection
+limiter, and whether the Tascam's monitor section gives a mute that can be hit by reflex. The
+DBX 266XL's PeakStopPlus would do the job well, but it is committed to drum glue on subgroup
+1/2 and moving it there costs the parallel blend.
 
 ---
 
@@ -226,5 +279,7 @@ neither the stems nor the MPC project hold — is the thing the Pro Tools sessio
    checked for polarity.
 7. Delay return high-passed and ducked.
 8. One plugin owns each problem — no frequency fixed twice.
-9. Mono check before bouncing. Everything is mono at source; the delay return and the XT:C are
+9. Safety limiter in the monitoring chain, not on the submix or the master — and showing no
+   gain reduction during normal work.
+10. Mono check before bouncing. Everything is mono at source; the delay return and the XT:C are
    the only things that can thin out on fold-down.

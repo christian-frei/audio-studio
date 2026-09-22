@@ -160,6 +160,13 @@ not expire, so all of this can happen before paying.
 | 7 | **Input monitoring off** | Confirmable and default-off, so the ch 21/22 feedback trap stays avoidable |
 | 8 | **CPU under load** | 22 tracks each with Pro-Q 4, plus the SSL and the delay bus, on the Mac Studio M4 |
 | 9 | **Export** | 24-bit WAV archive master; 16-bit with dither when needed |
+| 10 | **Monitoring FX chain** | A 20 Hz HPF + limiter in View → Monitoring FX audibly affects playback, and **does not appear in an offline render** — verify by rendering a file that would be limited and checking its peaks are untouched. Also check the render dialog has no option quietly including it |
+
+**Test 10 is the one thing Reaper does that Pro Tools cannot.** A safety limiter has to protect
+the speakers without printing into the bounce, and Pro Tools has no post-master monitoring
+chain — the nearest thing is a master fader insert that must be remembered and bypassed before
+every render. Reaper's Monitoring FX is the correct place for it by design. See
+[Monitor protection](manual_mixing_tascam_protools.md#monitor-protection).
 
 ### Known friction, expected
 
@@ -180,6 +187,9 @@ Decide these *before* running the tests, so the result is not rationalised after
 - Test 2 works but cannot be templated, so the duck has to be rebuilt every project. **Blocker**
   — that is a per-beat tax on the one move the mixing template exists for.
 - Tests 3, 6, 7, 9 fail. **Blockers**, though all are unlikely.
+- Test 10 fails. **Not a blocker** — it is a gain over Pro Tools, not parity with it. Falling
+  back means a bypass-before-render discipline, which is what Pro Tools would have forced
+  anyway.
 - Test 8 struggles. **Not a blocker** — thin the per-channel Pro-Q instances, since the doc
   already says most channels should end up doing nothing.
 - "It feels unfamiliar." **Not a blocker.** That is the price of the switch, and it is worth
