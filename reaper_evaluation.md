@@ -44,15 +44,23 @@ for owned licences when buying a bundle, so owning Pro-Q 4 should reduce the oth
 Everything below is cross-format (VST3/AU), so none of it is tied to Pro Tools. **No AAX-only
 plugins are in use**, which is the thing that would otherwise block a move outright.
 
-### Beat-making — the stage that is easy to forget
+### The tone-shaping template — the stage that is easy to forget
 
 | Tool | Role | Reaper |
 |---|---|---|
 | **Serato Sample** | Chopping drum breaks that live on the hard disk | VST3/AU — hosts fine, *verify* |
+| **Subfactory** | Sub-bass generation — played and sampled, never mixed | VST3/AU — *verify* |
 
-This matters more than it looks: the DAW is not only mix and master, it is also where hard-disk
-breaks get chopped before going out to the S950 for grit. Switching DAWs touches beat-making,
-not just the back end.
+Neither of these is ever used directly in a mix. They live in one **tone-shaping template** that
+is opened at the very start of a project, used to play material out to the S950 or an MPC, and
+then closed. **Those projects are never saved.** The DAW is only a vehicle for holding an
+instrumental VST and playing it — nothing it makes stays in the DAW, everything it makes ends up
+as a sample on hardware, which is what the archive rule already assumes.
+
+That narrows what Reaper has to prove here to two things: the plugins load and authorise, and
+the output reaches ch 21/22. No session recall, no automation, no mix state, no plugin delay
+compensation — there is no session to lose. Rebuilding a template that is never saved is a
+one-time cost, so this stage is the cheapest part of a DAW switch rather than the riskiest.
 
 **Routing note.** The chopped output reaches the S950 the long way round: Serato Sample → Mac
 out → **Tascam ch 21/22** → **aux 1** → S950 → Vermona → ch 10 → subgroup 3/4 or 5/6 → MPC.
@@ -71,16 +79,17 @@ channels, so it is worth being deliberate about which one the desk is in.
 | Delay bus | **ReaDelay** (stock) — tempo-sync, feedback, per-tap HP/LP | Free — *verify the filters* |
 | Delay ducking | ReaComp sidechained from the send | Free — same routing friction |
 
-Two owned plugins that need a decision rather than a slot:
+One owned plugin needs a decision rather than a slot:
 
 - **NI transient shaper** — duplicates the SPL Transient Designer, which is already printed on
   ch 1-3 and ch 10 on the way in. Using it again in the box means shaping transients twice.
   Keep it for the parallel drum return or a sample that needs rescuing, not as a default.
-- **Subfactory** — sub-bass generation. The sub-60 Hz kick layer currently comes from the MPC
-  and is part of the beat, which makes it part of the archive. Generating sub in the DAW moves
-  a *tonal* decision into the mixing stage, which cuts against the division of labour. Sensible
-  compromise: keep sub generation on the MPC, and treat Subfactory as a repair tool for a
-  picked-up beat whose sub does not hold up — not as a standard channel.
+
+**Subfactory is not in this template.** It belongs to the tone-shaping stage above: the
+sub-60 Hz layer is played there, sampled into the MPC, and from then on it is part of the beat
+and part of the archive. It never appears as a channel in a mixing session — a sub generated at
+mix time would be a *tonal* decision made in the mixing stage, which is exactly what the
+division of labour rules out.
 
 ### Mastering chain
 
@@ -145,8 +154,8 @@ not expire, so all of this can happen before paying.
 | 1 | **Arm and record 20+ Tascam inputs** | All channels arm, input numbers match the channel map, a 3-minute take records with no dropouts on the M4 |
 | 2 | **Kick → bass sidechain into Pro-Q 4** | The duck works. Reaper routes sidechain via channels 3/4 and the plugin pin matrix, which is genuinely fiddlier than Pro Tools — the test is whether it can be *saved into a template* so it is set up once, not per project |
 | 3 | **Project template reload** | Save the 22-channel template, close, reopen: inputs, plugins, folder/bus routing and sidechain all return intact |
-| 4 | **Plugin formats** | Pro-Q 4, SSL E-Channel, TAIP, NI transient shaper, **Serato Sample** all load and authorise |
-| 5 | **Serato Sample → S950 path** | Chop a break, route out to ch 21/22, into aux 1, sampled by the S950 — the beat-making loop still closes |
+| 4 | **Plugin formats** | Pro-Q 4, SSL E-Channel, TAIP, NI transient shaper, **Serato Sample**, **Subfactory** all load and authorise |
+| 5 | **Tone-shaping template → S950 path** | Chop a break (or play a sub), route out to ch 21/22, into aux 1, sampled by the S950 or an MPC — the sampling loop still closes. Session recall is irrelevant here; the project is thrown away |
 | 6 | **Mastering topology** | Beat → chain bus → master, reference track → master *directly*, master metering only. The reference must audibly bypass the chain |
 | 7 | **Input monitoring off** | Confirmable and default-off, so the ch 21/22 feedback trap stays avoidable |
 | 8 | **CPU under load** | 22 tracks each with Pro-Q 4, plus the SSL and the delay bus, on the Mac Studio M4 |
@@ -167,7 +176,7 @@ Everything else is learning curve rather than capability.
 
 Decide these *before* running the tests, so the result is not rationalised afterwards:
 
-- Test 1 or 5 fails — the capture or the beat-making loop does not work. **Blocker.**
+- Test 1 or 5 fails — the capture or the sampling loop does not work. **Blocker.**
 - Test 2 works but cannot be templated, so the duck has to be rebuilt every project. **Blocker**
   — that is a per-beat tax on the one move the mixing template exists for.
 - Tests 3, 6, 7, 9 fail. **Blockers**, though all are unlikely.
