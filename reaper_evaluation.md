@@ -109,10 +109,13 @@ Three caveats on the substitutions:
 The doc already marks it optional and the trade was always "noise is more forgivable than a
 breathing tail", so skipping is fine.
 
-**TAIP has no IPS switch.** The slot-4 spec is written in Reel Tape's language — 15 IPS, tape
-formulation, calibration into the red. TAIP's controls are different, so that section would
-need rewriting in TAIP's terms after a level-matched A/B. No reason to buy another tape plugin
-for this; **ChowTape is free** and does have a real IPS control if the head-bump behaviour turns
+**TAIP has no IPS switch.** The slot-4 spec was written in Reel Tape's language — 15 IPS, tape
+formulation, calibration into the red — so it has been **rewritten in TAIP's terms** as a
+sub-section of slot 4 in
+[manual_mastering_protools_studio.md](manual_mastering_protools_studio.md); the high roll-off
+maps onto PRESENCE and the head bump onto slot 3's LF shelf, since TAIP does not model it. Still
+needs the level-matched A/B, but it is no longer an open question. No reason to buy another tape
+plugin; **ChowTape is free** and does have a real IPS control if the head-bump behaviour turns
 out to matter.
 
 **Pro-L 2 would replace the metering too** — it has LUFS, true peak and PLR built in, which is

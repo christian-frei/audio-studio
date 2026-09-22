@@ -243,10 +243,9 @@ transient. Gate/Expander threshold fully down. Then bypass slot 5 entirely.
 
 The glue for 20+ channels of separately-captured hardware.
 
-**One tape stage, not two.** If TAIP is running on the mixing submix
-([manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md)), this slot is the second
-pass at the same effect — back it off hard or skip it. Decide which stage owns the tape rather
-than letting both creep upward.
+**This stage owns the tape.** Nothing upstream saturates — no tape or console colour on the
+mixing submix, by decision, so this slot is the only pass at the effect and can be set without
+accounting for a second one.
 
 | Param | Value |
 |---|---|
@@ -258,6 +257,30 @@ than letting both creep upward.
 
 Level-matched A/B is not optional. Saturation always sounds better when it is louder; if it
 still sounds better at matched level, keep it.
+
+### If using TAIP instead
+
+The same slot in a different plugin's language. **TAIP has no IPS switch**, so the two things
+15 IPS was chosen for have to be found elsewhere: the gentle high roll-off is what PRESENCE
+controls, and the low-end head bump is not modelled at all — slot 3's LF shelf at 70 Hz is
+already doing that job, which is the honest answer rather than forcing LO-SHAPE into the role.
+
+| Control | Setting | Why |
+|---|---|---|
+| MODEL | **DUAL** | Two emulations chained, each applying half the DRIVE — slightly more weight for the same amount of colour, and gentler per stage. This slot is glue for 20+ separately-captured channels, which is what weight means here |
+| INPUT | **NORMAL** | HOT is the more distorted input stage. Wrong on a master; the record already carries 12-bit distortion from the source |
+| DRIVE | **15–25 %** | The master bus wants less than a mix bus would. This is the equivalent of Reel Tape's "1–2 dB into the red on the loudest hits only" — audible on bypass, invisible otherwise |
+| AUTO GAIN | **On** | The level-matched A/B above depends on it. Without it, louder wins every time |
+| GLUE | **0–10 %** | Tape's compression artefact, and slot 5 is already a bus compressor set for ~1 dB GR. Two serial glues on a master is how a record ends up flat |
+| NOISE | **0** | Same reason as the Reel Tape spec — the S950, the MPC converters and the turntable supply plenty of real noise |
+| WEAR | **0** | Wow and flutter on a finished master smear the timing the whole record is built on. If tape warble is wanted it belongs upstream, printed into a sample before it reaches the MPC |
+| PRESENCE | **30–40 %** | Keeps most of tape's high-end attenuation — this is the 15 IPS roll-off, arrived at from the other direction. It also dulls 12-bit hash in the top octaves. Raise it if the hats lose air |
+| LO-SHAPE | **Low** | Saturating the low end refills the band that band 3 and the multiband's sub band just cleared, with harmonics. The head bump comes from slot 3, not from here |
+| HI-SHAPE | **Neutral to slightly up** | Puts what saturation there is into the mids and upper mids — the sample and the snare body — rather than into the sub or the hash |
+| MIX | **100 %** | Nothing to run parallel around at this drive. Pull back to 70–85 % only if DRIVE is pushed for a deliberately crunchy record |
+
+**If the head bump turns out to matter**, ChowTape is free and has a real IPS control. Worth a
+level-matched comparison before assuming slot 3's shelf covers it.
 
 ---
 
