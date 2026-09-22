@@ -150,7 +150,11 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
   colour comes from the outboard, not the desk. (Fallback colored desk if ever wanted, used
   market: Toft ATB-16, Midas Venice, A&H GL2400.)
   - usb -> Apple Studio M4. Per-channel sends post-FX and pre-fader; stereo master = the mix
-  - monitor out L/R -> speakers/monitors L,R
+  - monitor out L/R -> **ADAM Audio A7V** nearfields. DSP driver-protection limiters built in
+    (peak and voice-coil thermal), not defeatable — front LED flashing with the music = program
+    peaks, lit for longer = overheating. So no hardware limiter is needed in the monitor path;
+    see [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) under Monitor
+    protection
 
   **Channel map**
 

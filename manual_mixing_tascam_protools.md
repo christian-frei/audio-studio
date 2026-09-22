@@ -151,16 +151,30 @@ The **Waves SSL E-Channel** on the ch 19/20 return is the better tool than Pro-Q
 carve the parallel copy rather than re-mix the drums. Black knob, not brown: this is a channel,
 and it is meant to bite.
 
+**It is there as an EQ, not as glue.** The DBX already compressed this signal on the way in and
+it is printed on the file; the SSL's dynamics section stays off. Nothing in the box
+re-compresses the drum return.
+
 | Move | Setting | Why |
 |---|---|---|
 | Filters | **HPF 100 Hz** | Stops the crushed copy doubling the kick's low end into mush. The dry kick keeps the weight |
 | HF | **Shelf, 8 kHz, +2 dB** | Brings up room and snare tail — the part worth blending in |
 | LMF | **400 Hz, Q 1.0, −2 dB** | Where boxiness accumulates first in a parallel copy |
-| Dynamics | **Off** | The DBX already compressed this. Twice is mud |
+| Dynamics | **Off** | The DBX already compressed this, in hardware, and it is printed. Twice is mud |
+| ANALOG | **Off** | Same rule as the master and as every other channel: the colour comes from the hardware. With it on, the SSL adds plugin harmonics to an already-coloured signal |
 
 Bigger moves are fine here than anywhere else in the template — a parallel copy is meant to be
 carved, not flattered. If ch 19/20 up makes the drums *thinner* rather than fatter, the return
 is polarity-flipped; fix that at the desk before trying to EQ around it.
+
+**Why the SSL and not another Pro-Q.** This is the one place in the template where the EQ is
+meant to be broad and coloured rather than surgical — everywhere else an instance should end up
+doing nothing, here it is supposed to bite. The E-Channel's fixed curves tighten as they are
+pushed, and having the HPF and three bands in one known order makes the move fast and
+repeatable. Pro-Q would draw the same curve more precisely, and precision is not what a
+parallel copy wants. **A preference, not a principle** — one instance on one return is nowhere
+near the 22-instance compounding problem the analog-coloring section is about, and the plugin
+is already owned. Kept for the character.
 
 ### The submix
 
@@ -242,11 +256,28 @@ nothing for any of them:
 - needle drops and cueing the Technics into the Ecler
 - patching a jack with a channel up, an MPC pad at full, an S950 glitch
 
-Protection for those lives after the Tascam monitor out. Before buying anything for it, check
-the two things that may already handle it: whether the monitors have their own protection
-limiter, and whether the Tascam's monitor section gives a mute that can be hit by reflex. The
-DBX 266XL's PeakStopPlus would do the job well, but it is committed to drum glue on subgroup
-1/2 and moving it there costs the parallel blend.
+**The speakers already handle the driver half of this.** The **ADAM A7V** has limiters built
+into its DSP that protect the drivers against both excessive peaks and long-term voice coil
+heating, and they cannot be adjusted or switched off. So a needle drop or a feedback loop
+should not physically destroy a woofer — the monitor protects itself. (This is an A Series
+feature; the older A7X generation had nothing of the sort.)
+
+The front LED is the readout, and the two patterns mean different things:
+
+| LED | Meaning | Do |
+|---|---|---|
+| Flashing in time with the music | Program peaks are hitting the limiter | Turn the input level down |
+| Lit for a longer stretch | The voice coil is overheating | Turn down and let it cool before continuing |
+
+**What is still unprotected is hearing.** A feedback loop limited to the A7V's 105 dB SPL
+maximum is still 105 dB SPL at a metre, with no warning. That is the real reason to keep the
+monitoring-chain limiter: its job is to stop the DAW half from ever reaching the speaker's
+limiter in the first place. **The ADAM LED coming on is not "the protection worked" — it is
+evidence that a damage-adjacent level already arrived.**
+
+No hardware monitor limiter is needed, so the DBX stays on drum glue where it belongs. The one
+thing still worth having is reflex-level familiarity with the Tascam's monitor mute, which is
+the only control fast enough to matter when something goes wrong at the desk.
 
 ---
 
@@ -276,7 +307,8 @@ neither the stems nor the MPC project hold — is the thing the Pro Tools sessio
 4. Sub-60 Hz kick layer tuned to the key of the track.
 5. Analog coloring off, unless a level-matched all-on/all-off test on the full mix says otherwise.
 6. Parallel drum blend rebuilt against the pass-1 stereo master, and the ch 19/20 return
-   checked for polarity.
+   checked for polarity. SSL dynamics and ANALOG both off — it is an EQ there, the DBX did
+   the compressing.
 7. Delay return high-passed and ducked.
 8. One plugin owns each problem — no frequency fixed twice.
 9. Safety limiter in the monitoring chain, not on the submix or the master — and showing no
