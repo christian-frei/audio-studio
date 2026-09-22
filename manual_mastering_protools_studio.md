@@ -327,7 +327,9 @@ bounce.
    against the reference track in the session.
 2. Check mono. The MPC individual outs are mono into the desk, so the low end is already
    mono-compatible; the risk is the XT:C return thinning on the fold-down.
-3. Listen to the last bar's reverb tail — where over-compression shows first.
-4. Render 24-bit WAV as the archive master; 16-bit + POW-r 2 only if something demands it.
-5. Save the MPC project and its samples. The mix is unrecallable, the beat is not.
-6. Sleep on it. Reopening the mastering session costs nothing — the file is still sitting there.
+3. Low-end sanity check. If the kick loses weight exactly where the bass lands, that is
+   cancellation, not a mastering job — back to the multitrack session, and no band 3.
+4. Listen to the last bar's reverb tail — where over-compression shows first.
+5. Render 24-bit WAV as the archive master; 16-bit + POW-r 2 only if something demands it.
+6. Save the MPC project and its samples. The mix is unrecallable, the beat is not.
+7. Sleep on it. Reopening the mastering session costs nothing — the file is still sitting there.

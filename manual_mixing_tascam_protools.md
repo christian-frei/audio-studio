@@ -312,7 +312,9 @@ neither the stems nor the MPC project hold — is the thing the Pro Tools sessio
 
 1. Trim set for ≈ −10 dBFS per channel **before** balancing with faders.
 2. Both passes armed — stereo master **and** multitrack — with ch 21/22 muted for both.
-3. Polarity test on the bass before reaching for the duck.
+3. **Polarity test on the bass before reaching for the duck.** Flip the bass channel's
+   polarity: louder low end means cancellation, and the duck is the wrong tool — fix
+   timing or tuning instead. Thinner means masking, which is what the duck is for.
 4. Sub-60 Hz kick layer tuned to the key of the track.
 5. Analog coloring off, unless a level-matched all-on/all-off test on the full mix says otherwise.
 6. Parallel drum blend rebuilt against the pass-1 stereo master, and the ch 19/20 return
