@@ -36,7 +36,9 @@ discrete stereo file at a known level with no chain baked in.
 ## The file comes for free
 
 No extra bounce step — **pass 1 of the two-pass capture already is the render.** That 24-bit
-Tascam stereo master is what this session imports. The pass-2 multitrack never enters it.
+Tascam stereo master is what this session imports for a quick master; when the beat went
+through the multitrack mix, it is that session's stereo bounce instead. Either way a single
+stereo file arrives here — the pass-2 multitrack never enters this session.
 
 Match the session's sample rate and bit depth to the capture; no sample-rate conversion on the
 way in. Any conversion happens once, at the final render.

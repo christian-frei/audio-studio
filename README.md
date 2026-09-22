@@ -14,7 +14,7 @@ Mastering is a third stage in its own session.
 2. Build the beat on one MPC per project (MPC2500 or MPC2000 — never both)
 3. Track the 8 individual MPC outs through the Palmer Pan 16 into Tascam ch 1-8
 4. Shape the sound on the Tascam and the outboard — EQ, SPL, DBX glue, XT:C
-5. Capture over USB **post-FX and pre-fader**: the tone prints, the balance does not. Stereo master every beat, multitrack when a beat gets picked up
+5. Capture over USB **post-FX and pre-fader**: the tone prints, the balance does not. Stereo master **and** per-channel multitrack on every beat, one take, nothing rewired
 6. Mix in Pro Tools from the multitrack — balance, surgical Pro-Q, delay bus
 7. Master in Pro Tools Studio, in a separate session
 

@@ -24,12 +24,23 @@ deferred to a plugin, and nothing about the balance gets frozen before it is rea
 |---|---|---|
 | Source | Pass 1 stereo capture | Pass 2 per-channel multitrack |
 | Balance | Tascam faders, printed into the stereo file | Rebuilt in the Pro Tools template |
-| When | Every beat. Reference bounces, sending a rapper something | When a beat gets picked up and has to hold up |
+| When | The quick bounce — sending a rapper something the same evening | **The standard.** Every beat worth keeping |
 | Next step | Straight to the mastering session | Bounce a stereo mix, then the mastering session |
 
-Route A is the fast path and most beats never leave it. Route B exists because the multitrack
-is captured anyway, and because a beat that is actually going somewhere deserves the surgical
-pass that a live desk mix cannot do.
+**Route B is the default, and the multitrack is captured on every beat** — not only on the ones
+that get picked up. The two passes are one take with nothing rewired, so the extra cost is disk
+space and nothing else, and having all the stems on hand pays twice over:
+
+- **A quick master stays quick.** The template opens with the balance to rebuild and nothing
+  else to decide — the tone is already printed on the stems.
+- **Anything later starts from stems.** An in-depth master, a remix, a version prepared for
+  distribution — all of it begins with the parts, instead of with a re-track.
+
+The MPC project is still the archive and a re-track is still cheap, but a re-track only
+reproduces the *tone* if the desk and the outboard are still set the way they were — which
+depends on a photograph and a careful rebuild. The multitrack is the only thing that freezes
+the analog pass outright. Route A stays for the fast reference bounce; it is no longer where
+most beats end.
 
 ---
 
@@ -39,8 +50,9 @@ Two-pass capture, nothing rewired between passes — it can be a single take:
 
 - **Pass 1 — the mix (every beat):** arm the Tascam stereo master. EQ and balance on the desk,
   stereo bus → 2-track → Pro Tools.
-- **Pass 2 — the multitrack (when a beat gets picked up):** arm the per-channel USB multitrack
-  and record. Can be done any time later.
+- **Pass 2 — the multitrack (every beat):** arm the per-channel USB multitrack and record it in
+  the same take. It can be done later from a reloaded MPC project, but doing it now costs
+  nothing and keeps the analog tone that was actually heard.
 
 **Post-FX capture is deliberate.** The channel EQ prints — the desk EQ is part of the sound,
 not something to re-do later. So the multitrack is **not** a set of dry stems: ch 1-3 arrive
@@ -196,15 +208,17 @@ So: **save every MPC project and its samples religiously.** If a re-track is eve
 photograph the desk and the outboard front panels before tearing the session down. That photo
 is the only session recall a hardware mix has.
 
-The Pro Tools session recalls itself, which is precisely why Route B is worth having for beats
-that matter — but it only recalls the half of the mix that happened in the box.
+The Pro Tools session recalls itself, but only for the half of the mix that happened in the
+box. That is the case for capturing the multitrack every time: the stems carry the analog tone
+in a form that needs no photograph and no rebuild, and the fader balance — the one thing
+neither the stems nor the MPC project hold — is the thing the Pro Tools session is for.
 
 ---
 
 ## Checklist
 
 1. Trim set for ≈ −10 dBFS per channel **before** balancing with faders.
-2. Ch 21/22 muted for both capture passes.
+2. Both passes armed — stereo master **and** multitrack — with ch 21/22 muted for both.
 3. Polarity test on the bass before reaching for the duck.
 4. Sub-60 Hz kick layer tuned to the key of the track.
 5. Analog coloring off, unless a level-matched all-on/all-off test on the full mix says otherwise.

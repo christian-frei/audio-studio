@@ -87,8 +87,12 @@ parts that constrain the routing:
 - **Uniform ≈ -10 dBFS.** Every channel is tracked at a converter level, not a mix level. The
   trim sets what is recorded, the fader does not — so a fader cannot fix a hot multitrack
   channel, and channels faded out of the desk mix still record at full level.
-- **Two passes, nothing rewired.** Pass 1 = the Tascam stereo master (every beat). Pass 2 = the
-  per-channel multitrack (only when a beat gets picked up).
+- **Two passes, nothing rewired — both on every beat.** Pass 1 = the Tascam stereo master,
+  Pass 2 = the per-channel multitrack, recorded in the same take. The multitrack is the
+  standard, not a contingency: post-FX, pre-fader stems make a quick master quick and let a
+  later in-depth master, remix or distribution version start from the parts. The MPC project
+  reloads identically, but only the stems freeze the analog tone without a photograph and a
+  rebuild.
 - **Feedback-loop trap.** Ch 21/22 carries the Mac's return. With those channels up during a
   USB capture the DAW output feeds the master which feeds the DAW. Mute 21/22 for both passes
   and keep input monitoring off in Pro Tools.
