@@ -16,8 +16,8 @@ individual outs into the Tascam Model 2400.
 **The division of labour:** the Tascam and the analog gear do the sound modeling — EQ,
 transient shaping, glue, reverb — and that is printed on the way in and cannot be changed
 afterwards. **The DAW is for mixing**: balance, surgical corrections and time-based effects.
-Mastering is a third stage again, in its own session. See
-[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md).
+Mastering is a third stage again, in its own project. See
+[manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md).
 
 ### Medium fidelity
 
@@ -79,7 +79,7 @@ about which one the desk is in.
 
 ## Capture and mixing
 
-Full workflow in [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md). The
+Full workflow in [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md). The
 parts that constrain the routing:
 
 - **Post-FX, pre-fader.** The per-channel USB sends carry the Tascam EQ and the SPL shaping;
@@ -95,7 +95,7 @@ parts that constrain the routing:
   rebuild.
 - **Feedback-loop trap.** Ch 21/22 carries the Mac's return. With those channels up during a
   USB capture the DAW output feeds the master which feeds the DAW. Mute 21/22 for both passes
-  and keep input monitoring off in Pro Tools.
+  and keep record monitoring off in Reaper.
 - **Recall.** The MPC project is the archive, not the mixer — it reloads to identical 8-out
   audio, so the multitrack is always re-recordable. The analog pass is not recallable: **save
   every MPC project + its samples**, and photograph the desk and outboard front panels before
@@ -135,13 +135,14 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 
 ## Gear and signal chain
 
-- Apple Studio M4 — runs **Pro Tools Studio**, the only DAW (no Ableton). Returns to the desk
-  on ch 21/22 along with everything else coming out of the Mac. Mastering plugins: Pro Tools
-  stock (Pro Multiband Dynamics, Pro Compressor, Pro Limiter, Reel Tape Saturation) plus
-  **FabFilter Pro-Q 4** and the **Waves SSL E-Channel** strip. Mixing template in
-  [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md); mastering chain in
-  [manual_mastering_protools_studio.md](manual_mastering_protools_studio.md) and its session
-  layout in [protools_mastering_session.md](protools_mastering_session.md).
+- Apple Studio M4 — runs **Reaper**, the only DAW (no Ableton, no Pro Tools). Returns to the
+  desk on ch 21/22 along with everything else coming out of the Mac. Plugins: Reaper stock
+  (ReaXComp, ReaDelay, ReaVerbate, ReaComp, ReaLimit) plus **FabFilter Pro-Q 4**, the **Waves
+  SSL E-Channel** strip and **BABY Audio TAIP**. **FabFilter Pro-L 2** and **Pro-C 2** are on
+  the way in, for the limiter and bus-glue slots. Mixing template in
+  [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md); mastering chain in
+  [manual_mastering_reaper.md](manual_mastering_reaper.md) and its project
+  layout in [reaper_mastering_session.md](reaper_mastering_session.md).
 
 - Tascam Model 2400 — 24-channel analog console with built-in 24x22 USB interface and SD
   multitrack recorder. The studio hub: every tonal decision is made and printed here, and it is
@@ -153,7 +154,7 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
   - monitor out L/R -> **ADAM Audio A7V** nearfields. DSP driver-protection limiters built in
     (peak and voice-coil thermal), not defeatable — front LED flashing with the music = program
     peaks, lit for longer = overheating. So no hardware limiter is needed in the monitor path;
-    see [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) under Monitor
+    see [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md) under Monitor
     protection
 
   **Channel map**
@@ -171,7 +172,7 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
   | 15/16 | Ecler Nuo2 (turntable + KOII) | |
   | 17/18 | Alesis XT:C stereo return | EQ'd and recorded post-EQ |
   | 19/20 | DBX 266XL return — **parallel** drum glue | blended under ch 1-3, not an insert |
-  | 21/22 | Mac Studio M4 / Pro Tools returns | mute during capture — see feedback-loop trap |
+  | 21/22 | Mac Studio M4 / Reaper returns | mute during capture — see feedback-loop trap |
 
   **Aux sends**
   - aux 1 -> **mono** -> Akai S950 sample-in
@@ -256,8 +257,10 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 - **Subgroup count** — this routing uses six subgroup busses (1/2, 3/4, 5/6). Worth confirming
   the Model 2400 exposes that many as independent physical outputs.
 - **Ch 9** — the only free channel left.
-- **DAW** — Pro Tools Studio (~200 CHF/yr) is being evaluated against Reaper; Artist is ruled
-  out by its 16-input cap. See [reaper_evaluation.md](reaper_evaluation.md). Nothing migrated.
+- ~~**DAW**~~ — **settled: Reaper.** All the feasibility tests passed and Pro Tools is gone.
+  $60 one-time instead of ~200 CHF/year, no input-count tier, a plain-text `.RPP` project file,
+  and a Monitoring FX chain that holds the safety limiter outside the render path. The record of
+  what was tested is in [reaper_evaluation.md](reaper_evaluation.md).
 
 ## Currently not in use
 

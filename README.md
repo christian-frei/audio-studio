@@ -1,12 +1,12 @@
 # Boombap Sampling Home Studio
 
 Hardware-first home studio for making boombap hip-hop beats. Vinyl sampling through Akai MPCs,
-sound-modeled on a Tascam Model 2400 and outboard, mixed and mastered in Pro Tools Studio.
+sound-modeled on a Tascam Model 2400 and outboard, mixed and mastered in Reaper.
 
 **The division of labour:** the Tascam and the analog gear do the sound modeling — EQ,
 transient shaping, glue, reverb — decided in the moment and printed on the way in, where it
-cannot be changed afterwards. The DAW does the mixing: balance, surgical corrections, delays.
-Mastering is a third stage in its own session.
+cannot be changed afterwards. The DAW does the mixing: balance, surgical corrections, delay and reverb.
+Mastering is a third stage in its own project.
 
 ## Workflow
 
@@ -15,8 +15,8 @@ Mastering is a third stage in its own session.
 3. Track the 8 individual MPC outs through the Palmer Pan 16 into Tascam ch 1-8
 4. Shape the sound on the Tascam and the outboard — EQ, SPL, DBX glue, XT:C
 5. Capture over USB **post-FX and pre-fader**: the tone prints, the balance does not. Stereo master **and** per-channel multitrack on every beat, one take, nothing rewired
-6. Mix in Pro Tools from the multitrack — balance, surgical Pro-Q, delay bus
-7. Master in Pro Tools Studio, in a separate session
+6. Mix in Reaper from the multitrack — balance, surgical Pro-Q, delay and reverb buses
+7. Master in Reaper, in a separate project
 
 ## Signal Chain
 
@@ -46,14 +46,14 @@ graph TD
     T -->|subgroup 3/4| MPC2000
     T -->|subgroup 5/6| MPC2500
 
-    T -->|USB · post-FX| MAC[Apple Studio M4 · Pro Tools Studio]
+    T -->|USB · post-FX| MAC[Apple Studio M4 · Reaper]
     MAC -->|ch 21/22| T
     T -->|monitor out| MON[Monitors]
 ```
 
 The `.drawio` file has two pages: **Overview** (the physical signal chain above) and
-**Mixing and mastering** (the three stages inside the box — capture passes, the mixing session,
-the mastering session). Both are combined onto one A3 sheet in
+**Mixing and mastering** (the three stages inside the box — capture passes, the mixing project,
+the mastering project). Both are combined onto one A3 sheet in
 [studio-signal-chain.pdf](studio-signal-chain.pdf) for printing; regenerate it after editing the
 diagram with `tools/export-pdf.sh`.
 
@@ -71,8 +71,8 @@ diagram with `tools/export-pdf.sh`.
 ## Docs
 
 - [CLAUDE.md](CLAUDE.md) — full routing, gear list, rack layout, capture constraints
-- [manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) — the mixing stage: capture, the Pro Tools template, kick/bass ducking, delay bus
-- [manual_mastering_protools_studio.md](manual_mastering_protools_studio.md) — the mastering chain with exact values
-- [protools_mastering_session.md](protools_mastering_session.md) — how the mastering session is laid out, and why it is separate
+- [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md) — the mixing stage: capture, the Reaper template, kick/bass ducking, delay and reverb buses
+- [manual_mastering_reaper.md](manual_mastering_reaper.md) — the mastering chain with exact values
+- [reaper_mastering_session.md](reaper_mastering_session.md) — how the mastering project is laid out, and why it is separate
 - [dbx266xl-reference.md](dbx266xl-reference.md) — DBX 266XL settings for parallel drum glue
-- [reaper_evaluation.md](reaper_evaluation.md) — evaluating Reaper as a Pro Tools Studio replacement (open)
+- [reaper_evaluation.md](reaper_evaluation.md) — the Reaper migration: what was tested, what passed, what it cost (closed)

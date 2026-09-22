@@ -1,17 +1,17 @@
 # Manual mastering chain — boom bap, hybrid hardware capture
 
-Pro Tools **Studio** is the only DAW. Stock plugins: Pro Multiband Dynamics, Pro Compressor,
-Pro Limiter, Reel Tape Saturation. Third-party: **FabFilter Pro-Q 4** and the **Waves SSL
-E-Channel**. Routing in [CLAUDE.md](CLAUDE.md), the compressor in
-[dbx266xl-reference.md](dbx266xl-reference.md), session layout in
-[protools_mastering_session.md](protools_mastering_session.md).
+**Reaper** is the only DAW. Stock: **ReaXComp** for the multiband. Owned third-party:
+**FabFilter Pro-Q 4**, the **Waves SSL E-Channel**, **BABY Audio TAIP**. On the way in:
+**FabFilter Pro-C 2** and **Pro-L 2** — until they land, ReaComp and **ReaLimit** hold those
+two slots. Routing in [CLAUDE.md](CLAUDE.md), the compressor in
+[dbx266xl-reference.md](dbx266xl-reference.md), project layout in
+[reaper_mastering_session.md](reaper_mastering_session.md).
 
-**Chain:** Pro-Q 4 → Pro Multiband Dynamics → SSL E-Channel → Reel Tape Saturation →
-Pro Compressor → Pro Limiter. That is the full version; "the short chain" at the end is the
-three-plugin one that is usually enough.
+**Chain:** Pro-Q 4 → ReaXComp → SSL E-Channel → TAIP → Pro-C 2 → Pro-L 2. That is the full
+version; "the short chain" at the end is the three-plugin one that is usually enough.
 
-**Where it runs:** its own mastering session, on an aux, fed by the imported pass-1 stereo
-capture — never on the master fader of the MPC-recording template.
+**Where it runs:** its own mastering project, on a chain track, fed by the imported stereo
+file — never on the master track of the capture template.
 
 ---
 
@@ -22,14 +22,14 @@ DBX weight and the XT:C tails are all printed. The master's job is only: kill su
 control the kick/bass collision, add tape-style glue, and get it loud without flattening the
 drums. Everything else was already done on the desk.
 
-**This is a mastering chain, not a mixing one.** Mixing has its own stage and its own session —
-[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) — where the balance, the
+**This is a mastering chain, not a mixing one.** Mixing has its own stage and its own project —
+[manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md) — where the balance, the
 per-channel surgical work and the delay bus live. By the time a stereo file reaches this chain,
-both the tone (printed on the desk) and the balance (rebuilt in the multitrack session) are
+both the tone (printed on the desk) and the balance (rebuilt in the multitrack project) are
 settled. Anything fixed here that should have been fixed there gets applied to the whole record
 at once, which is why it rarely works.
 
-Same reason the chain lives in its own session: a master chain running while a mix is being
+Same reason the chain lives in its own project: a master chain running while a mix is being
 built means every balance decision gets made through a limiter.
 
 ### Capture map
@@ -45,12 +45,12 @@ built means every balance decision gets made through a limiter.
 | 15 / 16 | Ecler Nuo2 (turntable + KOII) |
 | 17 / 18 | **Alesis XT:C return — the snare reverb, EQ'd and printed** |
 | 19 / 20 | **DBX 266XL parallel drum-glue return** |
-| 21 / 22 | Mac / Pro Tools returns — mute during capture |
+| 21 / 22 | Mac / Reaper returns — mute during capture |
 
 ### What the multitrack holds — post-FX, pre-fader
 
 The per-channel USB sends are **post-EQ, post-insert, pre-fader** (confirmed by riding a fader
-against both Pro Tools meters). That splits the capture cleanly in two:
+against the desk and the Reaper meters together). That splits the capture cleanly in two:
 
 - **Printed on the multitrack:** the Tascam channel EQ, the SPL transient shaping on ch 1–3 and
   10, the XT:C return EQ on 17/18. Committal — there is no undo on a printed EQ curve.
@@ -107,19 +107,19 @@ layer from the MPC survives. Sweep it while soloing the kick.
 **Band 3 only fixes masking.** If the low end is weak because the kick and the bass are
 *cancelling*, ducking one of them leaves even less. The signs from a summed master: the low end
 reads loud on the meter but thin on the speakers, and it gets weaker at the moments the bass
-and the kick land together. That is not a mastering problem — go back to the multitrack session
+and the kick land together. That is not a mastering problem — go back to the multitrack project
 where the two are still separate files. Explanation and the polarity test in
-[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md).
+[manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md).
 
 **Why the multiband still exists after this.** Pro-Q's dynamic bands are program-dependent —
-threshold and range are yours, attack and release are automatic and not exposed. Pro Multiband
+threshold and range are yours, attack and release are automatic and not exposed. ReaXComp
 Dynamics gives actual attack and release numbers, which is what the tempo-locked sub band
 depends on. Pro-Q for anything surgical or mid/side; the multiband for anything needing timing
 set by hand.
 
 ---
 
-## Slot 2 — Pro Multiband Dynamics (the exact values)
+## Slot 2 — ReaXComp (the exact values)
 
 Four bands. The principle behind every attack number: **an attack faster than one cycle of the
 band's lowest frequency distorts rather than compresses.** One cycle at 30 Hz is 33 ms, at
@@ -136,7 +136,14 @@ Release is tied to the tempo so the band recovers before the next hit:
 
 Rule: **band release ≈ 8th-note value × 0.6.** At 90 BPM that is 200 ms. Recompute per beat.
 
-**Crossovers: 90 Hz / 350 Hz / 6 kHz.**
+**Crossovers: 90 Hz / 350 Hz / 6 kHz.** In ReaXComp these are the band *bottom frequencies* —
+four bands starting at 20 Hz, 90 Hz, 350 Hz and 6 kHz. Per band it gives numeric threshold,
+ratio, knee, attack, release and output gain, which is exactly what the values below assume.
+
+**ReaXComp compresses but does not expand.** The optional downward expander on band 4 has no
+equivalent here. Skip it: the doc already marked it optional, and the trade was always "noise
+is more forgivable than a breathing tail". A ReaGate on a split band would do it, but that is a
+lot of routing for a problem this record does not really have.
 
 ### Band 1 — Sub & kick body (20–90 Hz)
 
@@ -193,10 +200,11 @@ gentle de-esser for a record with no voices yet.
 | Threshold | for **1–2 dB GR on hat/cymbal peaks**, nothing between them |
 | Band gain | 0, or +0.5 dB after gain reduction to keep the sparkle |
 
-**Optional expander on band 4.** Old samplers hiss and the XT:C has a noise floor. Threshold
-**−55 dBFS**, ratio **1.5:1**, attack **5 ms**, release **250 ms**. If the XT:C decay starts
-chattering, raise the release to 400 ms or switch it off — noise is more forgivable than a
-breathing tail.
+**The band-4 expander is gone.** Old samplers hiss and the XT:C has a noise floor, and the
+old chain had an optional downward expander here for it. ReaXComp only compresses, so there is
+nothing to set. Leave it: the trade was always "noise is more forgivable than a breathing
+tail", and this record has enough deliberate noise in it that a gate on the top band was never
+going to be the thing that saved it.
 
 **Reading the whole plugin:** total GR across all four bands around **2–3 dB on the loudest
 bars, near zero in the gaps.** If every band moves all the time, the mix needs fixing on the
@@ -210,7 +218,7 @@ The Tascam is a clean desk by design; the colour was always meant to come from o
 E-Channel adds back the 4000-series character in the box, at the last stage where it is still
 safe to add it.
 
-**Use the EQ. Leave the DYN section out** (`DYN IN` off) — Pro Compressor in slot 5 does the
+**Use the EQ. Leave the DYN section out** (`DYN IN` off) — Pro-C 2 in slot 5 does the
 glue, and two bus compressors stacked is how a master turns into cardboard. If you prefer the
 SSL comp, use it *instead of* slot 5.
 
@@ -239,7 +247,7 @@ transient. Gate/Expander threshold fully down. Then bypass slot 5 entirely.
 
 ---
 
-## Slot 4 — Reel Tape Saturation
+## Slot 4 — TAIP (tape)
 
 The glue for 20+ channels of separately-captured hardware.
 
@@ -247,32 +255,19 @@ The glue for 20+ channels of separately-captured hardware.
 mixing submix, by decision, so this slot is the only pass at the effect and can be set without
 accounting for a second one.
 
-| Param | Value |
-|---|---|
-| Tape speed | **15 IPS** — the low-end head bump and gentle high roll-off are the point; 30 IPS is flatter and more "modern" |
-| Tape type | **Opus / 250** for a fuller low end; the darker formulation if the record wants to be dusty |
-| Calibration / Input | Push until the meter ticks **1–2 dB into the red on the loudest hits only** |
-| Noise | **Off** — the sources supply plenty already |
-| Output | Trim back so bypass A/B is level-matched |
-
-Level-matched A/B is not optional. Saturation always sounds better when it is louder; if it
-still sounds better at matched level, keep it.
-
-### If using TAIP instead
-
-The same slot in a different plugin's language. **TAIP has no IPS switch**, so the two things
-15 IPS was chosen for have to be found elsewhere: the gentle high roll-off is what PRESENCE
-controls, and the low-end head bump is not modelled at all — slot 3's LF shelf at 70 Hz is
+**TAIP has no IPS switch**, and the old spec here was written around 15 IPS for two specific
+reasons. Both survive the move, from different controls: the gentle high roll-off is what
+PRESENCE does, and the low-end head bump is not modelled at all — slot 3's LF shelf at 70 Hz is
 already doing that job, which is the honest answer rather than forcing LO-SHAPE into the role.
 
 | Control | Setting | Why |
 |---|---|---|
 | MODEL | **DUAL** | Two emulations chained, each applying half the DRIVE — slightly more weight for the same amount of colour, and gentler per stage. This slot is glue for 20+ separately-captured channels, which is what weight means here |
 | INPUT | **NORMAL** | HOT is the more distorted input stage. Wrong on a master; the record already carries 12-bit distortion from the source |
-| DRIVE | **15–25 %** | The master bus wants less than a mix bus would. This is the equivalent of Reel Tape's "1–2 dB into the red on the loudest hits only" — audible on bypass, invisible otherwise |
+| DRIVE | **15–25 %** | The master bus wants less than a mix bus would. Audible on bypass, invisible otherwise — the old Reel Tape spec called this "1–2 dB into the red on the loudest hits only" |
 | AUTO GAIN | **On** | The level-matched A/B above depends on it. Without it, louder wins every time |
 | GLUE | **0–10 %** | Tape's compression artefact, and slot 5 is already a bus compressor set for ~1 dB GR. Two serial glues on a master is how a record ends up flat |
-| NOISE | **0** | Same reason as the Reel Tape spec — the S950, the MPC converters and the turntable supply plenty of real noise |
+| NOISE | **0** | The S950, the MPC converters and the turntable supply plenty of real noise |
 | WEAR | **0** | Wow and flutter on a finished master smear the timing the whole record is built on. If tape warble is wanted it belongs upstream, printed into a sample before it reaches the MPC |
 | PRESENCE | **30–40 %** | Keeps most of tape's high-end attenuation — this is the 15 IPS roll-off, arrived at from the other direction. It also dulls 12-bit hash in the top octaves. Raise it if the hats lose air |
 | LO-SHAPE | **Low** | Saturating the low end refills the band that band 3 and the multiband's sub band just cleared, with harmonics. The head bump comes from slot 3, not from here |
@@ -282,33 +277,53 @@ already doing that job, which is the honest answer rather than forcing LO-SHAPE 
 **If the head bump turns out to matter**, ChowTape is free and has a real IPS control. Worth a
 level-matched comparison before assuming slot 3's shelf covers it.
 
+Level-matched A/B is not optional. Saturation always sounds better when it is louder; if it
+still sounds better at matched level, keep it.
+
 ---
 
-## Slot 5 — Pro Compressor (bus glue)
+## Slot 5 — FabFilter Pro-C 2 (bus glue)
 
 Skip entirely if you used the SSL E-Channel's compressor. One glue compressor, not two.
 
 | Param | Value | Why |
 |---|---|---|
+| Style | **Bus** | Program-dependent and gentle by design. Mastering style is the alternative; Punch and Pumping are the wrong end of the plugin for this |
 | Ratio | **1.5:1** (2:1 max) | Glue, not control |
 | Knee | **12 dB** soft | |
 | Attack | **30 ms** | Kick and snare transients pass untouched |
 | Release | **Auto**, or **300 ms** manual | Auto tracks the tempo well on drum-led material |
 | Threshold | for **1–1.5 dB GR maximum** | More and the drums start breathing |
-| **Sidechain HPF** | **100 Hz** | The most important setting here — stops the kick ducking the entire record |
-| Makeup | Level-matched to bypass | |
+| **Sidechain HPF** | **100 Hz** | The most important setting here — stops the kick ducking the entire record. Pro-C 2's sidechain filter section, not an external key |
+| Dry/Wet | **100 % wet** | Parallel belongs on the drum bus at the desk, and it already happened there in hardware |
+| Output | Level-matched to bypass | |
+
+**Until Pro-C 2 arrives:** ReaComp in the same slot, same numbers, with its detector high-pass
+set to 100 Hz. It does the job — Pro-C 2 is bought for the interface and the metering, not
+because the slot was empty.
 
 ---
 
-## Slot 6 — Pro Limiter
+## Slot 6 — FabFilter Pro-L 2
 
 | Param | Value |
 |---|---|
-| Ceiling | **−1.0 dBTP** (true-peak on). Lossy codecs overshoot; this is the safe margin |
-| Knee / character | Soft, the more forgiving setting — hard-knee limiting hollows out MPC kicks |
-| Release | **Auto**, or **200 ms** if the sustain pumps |
-| Threshold | Lower gradually into the loudest bar |
-| Dither | **POW-r 2** *only* when rendering to 16-bit. Bouncing 24-bit → no dither |
+| Style | **Punchy** — it is built to let short transients through, which is the whole argument for an MPC kick. Allround if Punchy sounds too crisp |
+| Ceiling | **−1.0 dBTP**, true peak limiting **on**. Lossy codecs overshoot; this is the safe margin |
+| Oversampling | **4x** | 
+| Release | **~200 ms**, or Auto if the sustain pumps |
+| Channel linking | **High** — the sources are mono and centred, so unlinked limiting only moves the image around |
+| Gain | Raise gradually into the loudest bar |
+| Dither | **Off in the plugin.** Reaper's render dialog does the dither — see the render checklist |
+
+**Pro-L 2 replaces the metering too**, which is the real reason it is the first of the two to
+buy: LUFS-I/S/M, true peak and the dynamic-range readout are built into it, so nothing else has
+to supply the numbers the targets below are written in.
+
+**Until it arrives:** **ReaLimit** holds the slot for ceiling and release, with **Youlean
+Loudness Meter 2** (free) on the master track for LUFS, true peak and PLR. Reaper's own
+loudness calculation can confirm an integrated figure on a finished render, but a live meter is
+what a limiter threshold actually gets set against.
 
 | Deliverable | Integrated LUFS | Notes |
 |---|---|---|
@@ -337,27 +352,28 @@ far it has gone before adding more.
 
 Six plugins on a master is a lot and most beats do not need them:
 
-**Pro-Q 4 → SSL E-Channel → Pro Limiter**
+**Pro-Q 4 → SSL E-Channel → Pro-L 2**
 
-High-pass and the mid/side low-cut, a dB of console colour, then loudness. Add Reel Tape when
-the mix feels like separate boxes rather than one record. Add the multiband only when kick and
-bass are actually fighting. Add Pro Compressor only when the whole thing needs knitting and the
-SSL's own comp is not doing it.
+High-pass and the mid/side low-cut, a dB of console colour, then loudness. Add TAIP when the
+mix feels like separate boxes rather than one record. Add ReaXComp only when kick and bass are
+actually fighting. Add Pro-C 2 only when the whole thing needs knitting and the SSL's own comp
+is not doing it.
 
 Full six-stage chain for a finished master; the short chain is the whole job for a reference
-bounce.
+render.
 
 ---
 
-## Bounce checklist
+## Render checklist
 
 1. Level-matched bypass A/B of the whole chain — better, or just louder? Then the same A/B
-   against the reference track in the session.
+   against the reference track in the project.
 2. Check mono. The MPC individual outs are mono into the desk, so the low end is already
    mono-compatible; the risk is the XT:C return thinning on the fold-down.
 3. Low-end sanity check. If the kick loses weight exactly where the bass lands, that is
-   cancellation, not a mastering job — back to the multitrack session, and no band 3.
+   cancellation, not a mastering job — back to the multitrack project, and no band 3.
 4. Listen to the last bar's reverb tail — where over-compression shows first.
-5. Render 24-bit WAV as the archive master; 16-bit + POW-r 2 only if something demands it.
+5. Render 24-bit WAV as the archive master. For 16-bit, tick **Dither master mix** and
+   **Noise shaping** in the render dialog — at 24-bit, neither.
 6. Save the MPC project and its samples. The mix is unrecallable, the beat is not.
-7. Sleep on it. Reopening the mastering session costs nothing — the file is still sitting there.
+7. Sleep on it. Reopening the mastering project costs nothing — the file is still sitting there.

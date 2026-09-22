@@ -1,11 +1,12 @@
 # Reaper evaluation — can it replace Pro Tools Studio?
 
-**Status: evaluating.** Nothing decided, nothing migrated. This file is the test plan and the
-inventory; the verdict goes at the bottom once the tests are run.
+**Status: closed, 2026-09-22. Yes. Every test passed and Pro Tools is gone.** This file is kept
+as the record of what was tested and why the switch was safe — the verdict is at the bottom.
+The working docs are Reaper-only now; nothing here is a live question.
 
-Current stack: Pro Tools Studio, ~200 CHF/year. See
-[manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md) and
-[manual_mastering_protools_studio.md](manual_mastering_protools_studio.md) for what the DAW
+Previous stack: Pro Tools Studio, ~200 CHF/year. See
+[manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md) and
+[manual_mastering_reaper.md](manual_mastering_reaper.md) for what the DAW
 actually has to do.
 
 ---
@@ -112,7 +113,7 @@ breathing tail", so skipping is fine.
 **TAIP has no IPS switch.** The slot-4 spec was written in Reel Tape's language — 15 IPS, tape
 formulation, calibration into the red — so it has been **rewritten in TAIP's terms** as a
 sub-section of slot 4 in
-[manual_mastering_protools_studio.md](manual_mastering_protools_studio.md); the high roll-off
+[manual_mastering_reaper.md](manual_mastering_reaper.md); the high roll-off
 maps onto PRESENCE and the head bump onto slot 3's LF shelf, since TAIP does not model it. Still
 needs the level-matched A/B, but it is no longer an open question. No reason to buy another tape
 plugin; **ChowTape is free** and does have a real IPS control if the head-bump behaviour turns
@@ -135,22 +136,23 @@ Losing the Pro Tools master fader's loudness modes is a real gap — the targets
 
 ---
 
-## What actually has to be bought: nothing
+## What actually had to be bought: nothing
 
-Every slot has a free or owned answer. Pro-L 2 and Pro-C 2 are quality-of-life, not gaps — and
-Pro-L 2 is the better of the two to buy first, because it covers the limiter *and* the
-metering. Pro-C 2 is the weakest case: Kotelnikov is free and has the sidechain high-pass that
-slot 5 calls the most important setting.
+Every slot had a free or owned answer, which is what made the evaluation honest — **$60 and
+stock plugins everywhere**, with the FabFilter decision deferred until there was experience to
+base it on rather than a guess in advance.
 
-So the honest minimum to evaluate properly is **$60**, using free plugins everywhere, and
-decide on FabFilter afterwards from experience rather than in advance.
+**That decision came out as: buy both.** Pro-L 2 first, because it covers the limiter *and* the
+metering the loudness targets are written in. Pro-C 2 second, on the interface rather than on
+need — ReaComp's detector high-pass does cover what slot 5 calls its most important setting.
+Neither is a gap being filled.
 
 ---
 
-## What Reaper must prove
+## What Reaper had to prove
 
-Run these against a real project, not a toy one. Reaper's trial is fully functional and does
-not expire, so all of this can happen before paying.
+Run against a real project, not a toy one. Reaper's trial is fully functional and does not
+expire, so all of this happened before paying. **All ten passed.**
 
 | # | Test | Pass criteria |
 |---|---|---|
@@ -175,16 +177,22 @@ every render. Reaper's Monitoring FX is the correct place for it by design. See
 
 **Sidechain routing is the one thing that is clearly worse than Pro Tools.** No dropdown — you
 raise the destination track to 4 channels, send the kick to channels 3/4, then map them in the
-plugin's pin connector. It works and it is stable, but it is several steps. Test 2 exists
-because the whole question is whether it survives being saved into a template.
+plugin's pin connector. It works and it is stable, but it is several steps.
 
-Everything else is learning curve rather than capability.
+**Confirmed, and it does not matter.** It saves into the project template and comes back
+intact, so it is a one-time setup rather than a per-beat tax — which was the entire question
+test 2 was asked to settle. The step-by-step is in
+[manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md); the step that gets forgotten
+is the pin connector, not the send.
+
+Everything else was learning curve rather than capability, and it went faster than expected.
 
 ---
 
-## What would send me back to Pro Tools
+## What would have sent me back to Pro Tools
 
-Decide these *before* running the tests, so the result is not rationalised afterwards:
+Decided *before* running the tests, so the result could not be rationalised afterwards. **None
+of these triggered.**
 
 - Test 1 or 5 fails — the capture or the sampling loop does not work. **Blocker.**
 - Test 2 works but cannot be templated, so the duck has to be rebuilt every project. **Blocker**
@@ -214,6 +222,36 @@ readable and diffable in twenty years without the software that made it.
 
 ---
 
-## Verdict
+## Verdict — 2026-09-22
 
-*To be filled in after the tests. Record the date, which tests failed, and the decision.*
+**Reaper, and Pro Tools is gone.** All ten tests passed, none of the blockers triggered, and
+the working knowledge came faster than expected — the sidechain routing that test 2 existed to
+worry about is a one-time template job, exactly as hoped, and it is now written up step by step
+in [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md).
+
+**What is actually being used**
+
+| Slot | Plugin | Status |
+|---|---|---|
+| Corrective EQ, per channel and mastering slot 1 | FabFilter Pro-Q 4 | Owned |
+| Multiband, mastering slot 2 | **ReaXComp** | Stock |
+| Console colour, ch 19/20 and mastering slot 3 | Waves SSL E-Channel | Owned |
+| Tape, mastering slot 4 | BABY Audio TAIP | Owned |
+| Bus glue, mastering slot 5 | **FabFilter Pro-C 2** | Buying — ReaComp holds the slot |
+| Limiter + metering, mastering slot 6 | **FabFilter Pro-L 2** | Buying — ReaLimit holds the slot |
+| Delay bus | **ReaDelay** | Stock |
+| Reverb bus | **ReaVerbate** | Stock — good enough, nothing to buy |
+| Safety limiter, Monitoring FX | ReaLimit → Pro-L 2 | Stock |
+
+**The two purchases are quality-of-life, not gaps.** ReaComp and ReaLimit do hold those slots,
+and the record would not sound broken with them. Pro-L 2 is the better of the two to buy first
+because it covers the limiter *and* the loudness metering the targets are written in. The
+reverb went the other way: stock ReaVerbate is a short dark tail behind a chop, which is the
+least demanding thing a reverb can be asked to do, so there is nothing to buy there.
+
+**What the switch cost:** $60, plus the two FabFilter licences by choice. Against ~200 CHF a
+year, forever, for a DAW whose sessions stop opening when the subscription does.
+
+**What it bought beyond the money:** no input-count tier, a plain-text `.RPP` that will still be
+readable in twenty years, and the Monitoring FX chain — a safety limiter that protects the
+speakers without ever printing into a render, which Pro Tools could not do at all.

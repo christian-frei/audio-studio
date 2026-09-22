@@ -1,14 +1,14 @@
-# Mixing — what the desk commits, what Pro Tools decides
+# Mixing — what the desk commits, what Reaper decides
 
-The Tascam commits the **tone**; Pro Tools decides the **balance**. That split is forced by the
+The Tascam commits the **tone**; Reaper decides the **balance**. That split is forced by the
 capture itself: the per-channel USB sends are post-EQ and **pre-fader**, so the EQ, the SPL
 transient shaping, the DBX glue and the XT:C tails all print, and the fader positions do not.
-Something has to rebuild the balance afterwards, and that is what the Pro Tools multitrack
-template is for.
+Something has to rebuild the balance afterwards, and that is what the Reaper multitrack
+project template is for.
 
 Mastering is a separate stage again — chain in
-[manual_mastering_protools_studio.md](manual_mastering_protools_studio.md), session layout in
-[protools_mastering_session.md](protools_mastering_session.md). Routing and channel map in
+[manual_mastering_reaper.md](manual_mastering_reaper.md), project layout in
+[reaper_mastering_session.md](reaper_mastering_session.md). Routing and channel map in
 [CLAUDE.md](CLAUDE.md).
 
 **This is not a daw-less setup, and it is not trying to be.** The Tascam and the analog gear
@@ -23,9 +23,9 @@ deferred to a plugin, and nothing about the balance gets frozen before it is rea
 | | Route A — desk mix | Route B — multitrack mix |
 |---|---|---|
 | Source | Pass 1 stereo capture | Pass 2 per-channel multitrack |
-| Balance | Tascam faders, printed into the stereo file | Rebuilt in the Pro Tools template |
+| Balance | Tascam faders, printed into the stereo file | Rebuilt in the Reaper template |
 | When | The quick bounce — sending a rapper something the same evening | **The standard.** Every beat worth keeping |
-| Next step | Straight to the mastering session | Bounce a stereo mix, then the mastering session |
+| Next step | Straight to the mastering project | Render a stereo mix, then the mastering project |
 
 **Route B is the default, and the multitrack is captured on every beat** — not only on the ones
 that get picked up. The two passes are one take with nothing rewired, so the extra cost is disk
@@ -49,7 +49,7 @@ most beats end.
 Two-pass capture, nothing rewired between passes — it can be a single take:
 
 - **Pass 1 — the mix (every beat):** arm the Tascam stereo master. EQ and balance on the desk,
-  stereo bus → 2-track → Pro Tools.
+  stereo bus → 2-track → Reaper.
 - **Pass 2 — the multitrack (every beat):** arm the per-channel USB multitrack and record it in
   the same take. It can be done later from a reloaded MPC project, but doing it now costs
   nothing and keeps the analog tone that was actually heard.
@@ -73,15 +73,36 @@ level-normalised archive. Three things follow at the desk:
 
 **Feedback-loop trap.** Ch 21/22 carries the Mac's return. If those channels are up while the
 stereo master is being captured over USB, the DAW output feeds the master which feeds the DAW.
-Keep 21/22 muted (or out of the master) during both passes, and input monitoring off in
-Pro Tools.
+Keep 21/22 muted (or out of the master) during both passes, and **record monitoring off** in
+Reaper — the default, but worth confirming on a 22-track arm where one stray monitor button is
+enough to start the loop.
 
 ---
 
-## The Pro Tools multitrack template
+## The Reaper multitrack template
 
-A channel per Tascam channel, each with a **FabFilter Pro-Q 4**, plus a submix, a delay bus,
-and a **Waves SSL E-Channel** on the ch 19/20 drum-glue return.
+A track per Tascam channel, each with a **FabFilter Pro-Q 4**, plus a submix, a delay bus, a
+reverb bus, and a **Waves SSL E-Channel** on the ch 19/20 drum-glue return.
+
+**Saved as a project template** (File → Project templates → Save as), so the 22 armed inputs,
+the plugin instances, the bus routing and the sidechain wiring all come back on New project.
+Building it is a one-time cost; rebuilding it per beat would be a tax on the one move the
+template exists for.
+
+| Track | Input | Feeds |
+|---|---|---|
+| 1-8 | Tascam ch 1-8 — MPC outs via the Palmer | submix |
+| 10 | Tascam ch 10 — S950 | submix |
+| 11/12 or 13/14 | the active MPC's stereo pair | submix |
+| 15/16 | Ecler — turntable and KOII | submix |
+| 17/18 | XT:C return, already EQ'd on the desk | submix |
+| 19/20 | DBX return — SSL E-Channel here | submix |
+| Submix | the tracks above | master |
+| Delay bus | sends only | submix |
+| Reverb bus | sends only | submix |
+
+Ch 21/22 has no track. It is the Mac's own return to the desk, so recording it would be
+recording Reaper's output back into Reaper.
 
 **Processing mode: Natural Phase**, same reasoning as the master — linear phase pre-rings, and
 pre-ringing smears the kick and snare transients this record is built on.
@@ -149,6 +170,27 @@ sidechain:
 yours, attack and release are automatic and not exposed. If the duck sounds late or smeared,
 that is the plugin, not the settings, and a dedicated sidechain compressor is the tool.
 
+#### Wiring the sidechain in Reaper
+
+There is no sidechain dropdown. The routing is explicit, which is fiddlier to set up once and
+then completely stable — and it lives in the template, so this is done once, not per beat.
+
+1. On the **bass track**, set the track channel count to **4** (track routing window → Track
+   channels: 4).
+2. From the **kick track**, add a **send** to the bass track, with destination channels
+   **3/4**. Set it **pre-fader** so rebuilding the balance does not change how hard the duck
+   works.
+3. Open Pro-Q 4 on the bass track, enable the external sidechain, and in the **plugin pin
+   connector** map input channels 3/4 into the plugin's sidechain inputs.
+4. Confirm it: solo the bass and pull the kick fader down. The duck should still work — that is
+   what pre-fader buys.
+
+The delay bus duck is the same pattern, keyed from the send rather than the kick.
+
+**The pin connector is the step that gets forgotten.** If the sidechain does nothing, that is
+almost always where it is — the send exists, the channels arrive, and nothing is mapped to the
+plugin's sidechain input.
+
 ### The parallel drum blend
 
 Ch 1-3 dry and ch 19/20 crushed arrive as separate files, so the blend is rebuilt here — from
@@ -199,17 +241,18 @@ Gentle moves. Anything past a dB or two here is a mix problem wearing an EQ cost
 **Nothing else belongs here.** Not bus compression — that already happened, in hardware, as the
 DBX on subgroup 1/2 returning parallel on ch 19/20, and doing it again in the box is
 compressing twice. Not tape or saturation — **the mastering stage owns the tape**, at slot 4 of
-[manual_mastering_protools_studio.md](manual_mastering_protools_studio.md), and one tape stage
+[manual_mastering_reaper.md](manual_mastering_reaper.md), and one tape stage
 is the whole point. And not a safety limiter; see [Monitor protection](#monitor-protection) for
 why that one has to stay out of the signal path entirely.
 
 The submix's other job is not an effect at all: it is the **level checkpoint**. The bounce has
-to leave the mix peaking **−10 to −6 dBFS** for the mastering session. That is a fader, not a
+to leave the mix peaking **−10 to −6 dBFS** for the mastering project. That is a fader, not a
 plugin.
 
-### The delay bus
+### The delay bus — ReaDelay
 
-For the chopped samples, to fill space that a mono, mostly-dry record leaves open.
+For the chopped samples, to fill space that a mono, mostly-dry record leaves open. Stock
+ReaDelay does everything this needs: tempo-sync, feedback, and per-tap high and low cut.
 
 | Param | Setting | Why |
 |---|---|---|
@@ -229,6 +272,41 @@ return is one of the very few genuine width tools on the record — the same arg
 side-channel air band on the master. Keep the low end out of it (that is what the HPF is for)
 and the mono fold-down stays safe.
 
+### The reverb bus — ReaVerbate
+
+**This does not replace the XT:C.** The two reverbs have different jobs and must not land on
+the same source:
+
+| | Alesis XT:C | ReaVerbate |
+|---|---|---|
+| Stage | Sound modeling, on the way in | Mixing, in the box |
+| Source | Mainly the snare, via aux 4 | Chops and instrumental samples — ch 4-8, and anything that arrived dry |
+| Recallable | No. Printed on ch 17/18, EQ'd, committed | Yes, it is in the project |
+| Decision | Made in the moment at the desk | Changeable until the mix is rendered |
+
+Time-based effects are the DAW's half of the division of labour, so a reverb bus here is
+consistent with the architecture — as long as it is not a second coat of space on material the
+XT:C already treated. **If ch 17/18 is up, the snare already has its reverb.**
+
+A send bus, fed post-fader, Wet **100 %** / Dry **0 %** (the dry is the track itself):
+
+| Param | Setting | Why |
+|---|---|---|
+| Room size | **Small to medium** | Depth, not a hall. Boombap is a dry genre; this is for the chop to sit behind the drums, not to float |
+| Damping | **High** | Dark tails. The bright end of a reverb is where 12-bit hash and sampled room noise smear together |
+| Initial delay | **20–30 ms** | Pre-delay keeps the transient clear of the tail, so the chop stays defined and the drums stay in front |
+| Highpass | **300–400 Hz** | Same rule as the delay return, for the same reason: nothing from this bus belongs near the kick or the bass |
+| Lowpass | **4–6 kHz** | Puts the tail behind the dry signal and hides the top-octave hash |
+| Stereo width | **Moderate** | Genuine width on a mono-source record, but the same caution as the delay — check the mono fold-down before trusting it |
+
+**Duck it like the delay if it gets crowded.** ReaComp on the bus, keyed from the send, using
+the same 4-channel wiring as the kick/bass duck. Less critical than the delay duck — a dark,
+short, high-passed tail already stays out of the way — but the option is there.
+
+**ReaVerb instead** if a specific room or plate impulse is ever wanted. Stock is genuinely
+enough here: this bus is a short dark tail behind a chop, which is the least demanding thing a
+reverb can be asked to do. Nothing to buy.
+
 ---
 
 ## Monitor protection
@@ -237,19 +315,19 @@ A safety limiter is worth having, and **the one place it must not go is the sign
 
 - **Not on the submix.** It would print into the bounce, and it only sees what is routed
   through it. A limiter there is a mix decision wearing protection's clothes.
-- **Not on the master fader.** Master FX are included in a render — in Reaper by default, and
-  in Pro Tools a master fader insert is in the bounce path too. That ships a limited mix into
-  the mastering session invisibly, which is exactly the "fix it at the master" move the
-  separate-session rule exists to prevent.
+- **Not on the master track.** Master FX are included in a render by default. That ships a
+  limited mix into the mastering project invisibly, which is exactly the "fix it at the master"
+  move the separate-project rule exists to prevent.
 - **On Reaper's Monitoring FX chain** (View → Monitoring FX). It sits after the master, feeds
   the hardware output only, and is not part of an offline render. This is what it is for, and
-  Pro Tools has no equivalent — so it is a genuine point in Reaper's favour, listed as test 10
-  in [reaper_evaluation.md](reaper_evaluation.md) rather than assumed.
+  verified against a render before being trusted — see the verdict in
+  [reaper_evaluation.md](reaper_evaluation.md). This is one of the things Reaper does that the
+  old Pro Tools setup could not.
 
 | Slot | Setting | Why |
 |---|---|---|
 | 1 — subsonic filter | **HPF 20 Hz** | DC offset and subsonic thumps kill woofers more reliably than loud music does. Ahead of the limiter, so it is not what the limiter is reacting to |
-| 2 — limiter | **ReaLimit** or Pro-L 2, ceiling **−6 dBFS**, no gain | Mixes bounce at −10 to −6 dBFS peak, so this never engages during normal work — but the full-scale accident is ~10 dB louder, and it catches that |
+| 2 — limiter | **ReaLimit** today, **Pro-L 2** once it is bought, ceiling **−6 dBFS**, no gain | Mixes bounce at −10 to −6 dBFS peak, so this never engages during normal work — but the full-scale accident is ~10 dB louder, and it catches that |
 
 **If it shows gain reduction while you are just mixing, the ceiling is wrong**, not the mix.
 The meter resting at 0 is the whole point; a safety limiter that works every day is a
@@ -301,10 +379,14 @@ So: **save every MPC project and its samples religiously.** If a re-track is eve
 photograph the desk and the outboard front panels before tearing the session down. That photo
 is the only session recall a hardware mix has.
 
-The Pro Tools session recalls itself, but only for the half of the mix that happened in the
-box. That is the case for capturing the multitrack every time: the stems carry the analog tone
-in a form that needs no photograph and no rebuild, and the fader balance — the one thing
-neither the stems nor the MPC project hold — is the thing the Pro Tools session is for.
+The Reaper project recalls itself, but only for the half of the mix that happened in the box.
+That is the case for capturing the multitrack every time: the stems carry the analog tone in a
+form that needs no photograph and no rebuild, and the fader balance — the one thing neither the
+stems nor the MPC project hold — is the thing the Reaper project is for.
+
+One more point on the same principle: an `.RPP` is **plain text**. It opens in a text editor,
+diffs in git, and stays readable in twenty years without the software that wrote it. The mix
+half of the recall is now archived in a format that cannot rot.
 
 ---
 
@@ -323,8 +405,10 @@ neither the stems nor the MPC project hold — is the thing the Pro Tools sessio
    EQ'd around. SSL dynamics and ANALOG both off — it is an EQ there, the DBX did the
    compressing.
 7. Delay return high-passed and ducked.
-8. One plugin owns each problem — no frequency fixed twice.
-9. Safety limiter in the monitoring chain, not on the submix or the master — and showing no
-   gain reduction during normal work.
-10. Mono check before bouncing. Everything is mono at source; the delay return and the XT:C are
-   the only things that can thin out on fold-down.
+8. Reverb bus not doubling the XT:C — if ch 17/18 is up, the snare already has its space.
+9. One plugin owns each problem — no frequency fixed twice.
+10. Safety limiter in the Monitoring FX chain, not on the submix or the master track — and
+    showing no gain reduction during normal work.
+11. Mono check before rendering. Everything is mono at source; the delay return, the reverb bus
+    and the XT:C are the only things that can thin out on fold-down.
+12. Render the stereo mix at **−10 to −6 dBFS peak**, 24-bit, for the mastering project.
