@@ -64,6 +64,15 @@ Drum breaks that live on the hard disk are chopped in **Serato Sample** on the M
 out for grit rather than used directly: Serato Sample -> Mac out -> **ch 21/22** -> **aux 1**
 -> Akai S950 -> Vermona -> ch 10 -> subgroup 3/4 or 5/6 -> MPC.
 
+**The instrumental VSTs are never used directly.** Serato Sample and **Subfactory** (sub-bass)
+live in one **tone-shaping template**, opened only at the very start of a project to play
+material out to the S950 or an MPC over the path above, then closed. **Those projects are never
+saved.** The DAW here is just a vehicle for holding an instrumental VST and playing it — nothing
+it makes stays in the DAW, everything it makes ends up as a sample on hardware, which is what
+the archive rule assumes. The sub-60 Hz layer is generated this way and sampled into the MPC, so
+it is part of the beat; it is never a channel in a mixing session, where it would be a tonal
+decision made at the wrong stage.
+
 Note the conflict with the capture rule: this path needs ch 21/22 **up**, while a USB capture
 needs them **muted** (feedback-loop trap). Same channels, two opposite states — be deliberate
 about which one the desk is in.
