@@ -243,6 +243,11 @@ transient. Gate/Expander threshold fully down. Then bypass slot 5 entirely.
 
 The glue for 20+ channels of separately-captured hardware.
 
+**One tape stage, not two.** If TAIP is running on the mixing submix
+([manual_mixing_tascam_protools.md](manual_mixing_tascam_protools.md)), this slot is the second
+pass at the same effect — back it off hard or skip it. Decide which stage owns the tape rather
+than letting both creep upward.
+
 | Param | Value |
 |---|---|
 | Tape speed | **15 IPS** — the low-end head bump and gentle high roll-off are the point; 30 IPS is flatter and more "modern" |

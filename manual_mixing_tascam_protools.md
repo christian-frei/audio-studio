@@ -196,16 +196,48 @@ per-channel if one source causes it, on the submix if it only exists once things
 
 Gentle moves. Anything past a dB or two here is a mix problem wearing an EQ costume.
 
-**Nothing else belongs here.** Not bus compression — that already happened, in hardware, as the
-DBX on subgroup 1/2 returning parallel on ch 19/20, and doing it again in the box is
-compressing twice. Not saturation — the analog-coloring section rules it out, with the single
-level-matched instance above as the only exception. And not a safety limiter; see
-[Monitor protection](#monitor-protection) for why that one has to stay out of the signal path
-entirely.
+**No bus compression here.** That already happened, in hardware, as the DBX on subgroup 1/2
+returning parallel on ch 19/20, and doing it again in the box is compressing twice. And no
+safety limiter; see [Monitor protection](#monitor-protection) for why that one has to stay out
+of the signal path entirely.
 
 The submix's other job is not an effect at all: it is the **level checkpoint**. The bounce has
 to leave the mix peaking **−10 to −6 dBFS** for the mastering session. That is a fader, not a
-plugin.
+plugin — and **TAIP changes the peaks, so check this after the tape, not before.**
+
+#### TAIP on the submix — the one sanctioned plugin colour
+
+This is a deliberate exception to "colour comes from hardware". It is one audible decision on
+one bus, which is the shape the analog-coloring section already allows; it is not 22 invisible
+ones. TAIP ships AAX as well as VST3/AU, so this does not wait on the Reaper decision.
+
+Last in the submix chain, after the Pro-Q.
+
+| Control | Setting | Why |
+|---|---|---|
+| MODEL | **DUAL** | Two emulations chained, each applying half the DRIVE. Slightly more weight for the same amount of colour, and gentler per stage than one hard one |
+| INPUT | **NORMAL** | HOT is the more distorted input. The record already carries 12-bit distortion, and a deliberate crunch belongs upstream, before the sample goes into the MPC |
+| DRIVE | **~20 %**, ceiling **35 %** | Enough to hear on bypass and no more. Past this the MPC transients start rounding off, which is the opposite of what the SPLs were for |
+| AUTO GAIN | **On** | Not optional. Every test in this studio is level-matched, and without it the louder setting wins every A/B |
+| GLUE | **0–15 %** | Effectively off. This is tape's compression artefact, and the drums were already compressed by the DBX in parallel, in hardware, and printed. Serial glue on top of that is the second compressor the architecture keeps avoiding |
+| NOISE | **0** | The S950, the MPC converters and the turntable supply real noise from real sources. Modelled hiss on top of it is exactly what the analog-coloring section argues against |
+| WEAR | **0** | Wow and flutter smear the MPC's timing, which is the groove. If tape warble is wanted it belongs upstream — on a sample before it is re-sampled — so it prints and becomes part of the beat |
+| PRESENCE | **~30–40 %** | Keeps most of tape's high-end attenuation. Useful here specifically: it dulls 12-bit hash in the top octaves. Raise it if the hats lose their air |
+| LO-SHAPE | **Low** | The manual's own example is warming a drum buss without distorting the lows. Here it matters more than usual — saturation refills the band the kick/bass duck just cleared, with harmonics |
+| HI-SHAPE | **Neutral to slightly up** | Puts what saturation there is into the mids and upper mids, where the sample and the snare body live, rather than into the sub or the hash |
+| MIX | **100 %** | At these drive levels there is nothing to run parallel around. Pull it back to 60–80 % only if DRIVE is pushed for a deliberately crunchy record |
+
+**Two things to re-check after adding it.** The kick/bass duck, because saturation puts
+harmonic content back into the band that was just ducked; and the bounce level, because tape
+changes the peaks.
+
+**One tape stage, not two.** The mastering chain has tape at slot 4
+([manual_mastering_protools_studio.md](manual_mastering_protools_studio.md)). Running both is
+double-dipping on the same effect. If TAIP is on the submix, back the mastering tape slot off
+or skip it — and decide which stage owns it rather than letting both drift upward.
+
+**Test it the same way as everything else:** level-matched bypass, on the full mix, not on a
+soloed channel. Better, or just different?
 
 ### The delay bus
 
@@ -317,9 +349,11 @@ neither the stems nor the MPC project hold — is the thing the Pro Tools sessio
    timing or tuning instead. Thinner means masking, which is what the duck is for.
 4. Sub-60 Hz kick layer tuned to the key of the track.
 5. Analog coloring off, unless a level-matched all-on/all-off test on the full mix says otherwise.
-6. Parallel drum blend rebuilt against the pass-1 stereo master, and the ch 19/20 return
-   checked for polarity. SSL dynamics and ANALOG both off — it is an EQ there, the DBX did
-   the compressing.
+6. **Parallel drum blend** rebuilt against the pass-1 stereo master. **Polarity check on the
+   ch 19/20 return:** bring it up under the dry drums — fatter means the polarity is right,
+   thinner or hollow means the return is flipped, and that gets fixed at the desk rather than
+   EQ'd around. SSL dynamics and ANALOG both off — it is an EQ there, the DBX did the
+   compressing.
 7. Delay return high-passed and ducked.
 8. One plugin owns each problem — no frequency fixed twice.
 9. Safety limiter in the monitoring chain, not on the submix or the master — and showing no
