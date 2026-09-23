@@ -327,7 +327,7 @@ A safety limiter is worth having, and **the one place it must not go is the sign
 | Slot | Setting | Why |
 |---|---|---|
 | 1 — subsonic filter | **HPF 20 Hz** | DC offset and subsonic thumps kill woofers more reliably than loud music does. Ahead of the limiter, so it is not what the limiter is reacting to |
-| 2 — limiter | **ReaLimit** today, **Pro-L 2** once it is bought, ceiling **−6 dBFS**, no gain | Mixes bounce at −10 to −6 dBFS peak, so this never engages during normal work — but the full-scale accident is ~10 dB louder, and it catches that |
+| 2 — limiter | **ReaLimit**, ceiling **−6 dBFS**, no gain | Mixes bounce at −10 to −6 dBFS peak, so this never engages during normal work — but the full-scale accident is ~10 dB louder, and it catches that |
 
 **If it shows gain reduction while you are just mixing, the ceiling is wrong**, not the mix.
 The meter resting at 0 is the whole point; a safety limiter that works every day is a

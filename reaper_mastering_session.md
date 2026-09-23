@@ -13,7 +13,7 @@ only about *where* the chain runs. Routing is in [CLAUDE.md](CLAUDE.md).
 
 **Because otherwise you stop hearing the mix.** With the chain on the tracking template's
 master track, every balance decision made on the Tascam is auditioned through 2–3 dB of
-multiband, a tape stage and a limiter pulling everything to −11 LUFS. The compensation happens
+a tape stage and a limiter pulling everything to −12 LUFS. The compensation happens
 without noticing — the kick gets mixed softer because the limiter already makes it feel big,
 the top stays dull because the SSL shelf is adding air. Bypass the chain later and the mix
 underneath is thin and wrong.
@@ -57,7 +57,7 @@ way in. Any conversion happens once, at the final render.
 | Track — the beat | Fader at **unity**, no FX. **Master/parent send OFF**, one send → the CHAIN track | All level work happens in the chain, so the −10 to −6 dBFS render stays the reference point |
 | Track — **the chain** | Receives the beat. Plugins in slot order in its FX chain | Bypasses and level-matches as a unit, and leaves the master clean for the reference |
 | Track — **a commercial reference** | Straight to the master, never through the chain | One fader flip A/Bs against a record that works |
-| Master track | **Metering only** — Pro-L 2's meters, or Youlean until then. No processing | LUFS / true peak / PLR on whatever is playing |
+| Master track | **Metering only** — Youlean Loudness Meter 2, no processing | LUFS / true peak / PLR on whatever is playing |
 
 **Turning the beat track's master send off is the step that matters.** Leave it on and the beat
 reaches the master twice — once dry, once through the chain — which sounds like a phasey,
@@ -76,8 +76,8 @@ always wins otherwise.
 2. Import and gain-match a reference that sounds like the target.
 3. Set the monitor level on the Tascam and **leave it there**. A fixed, moderate listening level
    decides more than any plugin in the chain.
-4. Start with the short chain (Pro-Q 4 → SSL E-Channel → Pro-L 2); add stages only when a
-   specific problem asks for one.
+4. The chain is Pro-Q 4 → TAIP → ReaLimit. Three plugins is the whole thing — adding a fourth
+   means something upstream was left unfinished.
 5. Level-matched bypass A/B of the whole chain track, repeatedly.
 6. Render. 24-bit WAV is the archive master.
 

@@ -137,9 +137,10 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 
 - Apple Studio M4 — runs **Reaper**, the only DAW (no Ableton, no Pro Tools). Returns to the
   desk on ch 21/22 along with everything else coming out of the Mac. Plugins: Reaper stock
-  (ReaXComp, ReaDelay, ReaVerbate, ReaComp, ReaLimit) plus **FabFilter Pro-Q 4**, the **Waves
-  SSL E-Channel** strip and **BABY Audio TAIP**. **FabFilter Pro-L 2** and **Pro-C 2** are on
-  the way in, for the limiter and bus-glue slots. Mixing template in
+  (ReaDelay, ReaVerbate, ReaComp, ReaLimit) plus **FabFilter Pro-Q 4**, the **Waves SSL
+  E-Channel** strip, **BABY Audio TAIP** and the free **Youlean Loudness Meter 2**. The
+  mastering chain is three plugins — Pro-Q 4 → TAIP → ReaLimit to −12 LUFS — and nothing is on
+  the shopping list. Mixing template in
   [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md); mastering chain in
   [manual_mastering_reaper.md](manual_mastering_reaper.md) and its project
   layout in [reaper_mastering_session.md](reaper_mastering_session.md).
@@ -260,8 +261,7 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 - **Mastering** — evaluating LANDR (Standard/Pro) against the manual Reaper chain for the
   Shorts deliverable, given no mastering experience yet and a pro handling real releases. See
   [mastering_evaluation_landr.md](mastering_evaluation_landr.md). Nothing subscribed. Related:
-  Pro-L 2 is **not** the answer to Shorts loudness — the target is −14 LUFS, where the limiter
-  barely works.
+  Pro-L 2 is **not** the answer to Shorts loudness — at −12 LUFS the limiter barely works.
 
 - ~~**DAW**~~ — **settled: Reaper.** All the feasibility tests passed and Pro Tools is gone.
   $60 one-time instead of ~200 CHF/year, no input-count tier, a plain-text `.RPP` project file,

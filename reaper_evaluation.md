@@ -142,10 +142,10 @@ Every slot had a free or owned answer, which is what made the evaluation honest 
 stock plugins everywhere**, with the FabFilter decision deferred until there was experience to
 base it on rather than a guess in advance.
 
-**That decision came out as: buy both.** Pro-L 2 first, because it covers the limiter *and* the
-metering the loudness targets are written in. Pro-C 2 second, on the interface rather than on
-need — ReaComp's detector high-pass does cover what slot 5 calls its most important setting.
-Neither is a gap being filled.
+**That decision came out as: buy neither**, once the mastering chain was simplified to three
+plugins. The slots Pro-C and Pro-L would have filled no longer exist, and the limiter that
+remains is doing 1–2 dB of work. Any future FabFilter purchase should be argued on its own
+merits — the case for **Pro-MB** over a compressor is in the section above.
 
 ---
 
@@ -234,20 +234,21 @@ in [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md).
 | Slot | Plugin | Status |
 |---|---|---|
 | Corrective EQ, per channel and mastering slot 1 | FabFilter Pro-Q 4 | Owned |
-| Multiband, mastering slot 2 | **ReaXComp** | Stock |
-| Console colour, ch 19/20 and mastering slot 3 | Waves SSL E-Channel | Owned |
-| Tape, mastering slot 4 | BABY Audio TAIP | Owned |
-| Bus glue, mastering slot 5 | **FabFilter Pro-C 2** | Buying — ReaComp holds the slot |
-| Limiter + metering, mastering slot 6 | **FabFilter Pro-L 2** | Buying — ReaLimit holds the slot |
+| Console colour, ch 19/20 drum return | Waves SSL E-Channel | Owned |
+| Tape and glue, mastering slot 2 | BABY Audio TAIP | Owned |
+| Limiter, mastering slot 3 | **ReaLimit** | Stock |
+| Loudness metering | **Youlean Loudness Meter 2** | Free |
 | Delay bus | **ReaDelay** | Stock |
 | Reverb bus | **ReaVerbate** | Stock — good enough, nothing to buy |
 | Safety limiter, Monitoring FX | ReaLimit → Pro-L 2 | Stock |
 
-**The two purchases are quality-of-life, not gaps.** ReaComp and ReaLimit do hold those slots,
-and the record would not sound broken with them. Pro-L 2 is the better of the two to buy first
-because it covers the limiter *and* the loudness metering the targets are written in. The
-reverb went the other way: stock ReaVerbate is a short dark tail behind a chop, which is the
-least demanding thing a reverb can be asked to do, so there is nothing to buy there.
+**Nothing is being bought after all.** The mastering chain was later cut to three plugins —
+Pro-Q 4 → TAIP → ReaLimit, with Youlean on the master — which removed the multiband and the bus
+compressor entirely and left the limiter doing 1–2 dB of work at a −12 LUFS target. ReaLimit
+covers that, Youlean covers the metering, and stock ReaVerbate covers the reverb bus. See
+[manual_mastering_reaper.md](manual_mastering_reaper.md) for the chain and
+[mastering_evaluation_landr.md](mastering_evaluation_landr.md) for why loudness is not a
+plugin-shaped problem.
 
 **What the switch cost:** $60, plus the two FabFilter licences by choice. Against ~200 CHF a
 year, forever, for a DAW whose sessions stop opening when the subscription does.

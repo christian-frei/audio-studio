@@ -16,7 +16,7 @@ Mastering is a third stage in its own project.
 4. Shape the sound on the Tascam and the outboard — EQ, SPL, DBX glue, XT:C
 5. Capture over USB **post-FX and pre-fader**: the tone prints, the balance does not. Stereo master **and** per-channel multitrack on every beat, one take, nothing rewired
 6. Mix in Reaper from the multitrack — balance, surgical Pro-Q, delay and reverb buses
-7. Master in Reaper, in a separate project
+7. Master in Reaper, in a separate project — three plugins to −12 LUFS
 
 ## Signal Chain
 
@@ -72,7 +72,7 @@ diagram with `tools/export-pdf.sh`.
 
 - [CLAUDE.md](CLAUDE.md) — full routing, gear list, rack layout, capture constraints
 - [manual_mixing_tascam_reaper.md](manual_mixing_tascam_reaper.md) — the mixing stage: capture, the Reaper template, kick/bass ducking, delay and reverb buses
-- [manual_mastering_reaper.md](manual_mastering_reaper.md) — the mastering chain with exact values
+- [manual_mastering_reaper.md](manual_mastering_reaper.md) — the three-plugin mastering chain with exact values
 - [reaper_mastering_session.md](reaper_mastering_session.md) — how the mastering project is laid out, and why it is separate
 - [dbx266xl-reference.md](dbx266xl-reference.md) — DBX 266XL settings for parallel drum glue
 - [reaper_evaluation.md](reaper_evaluation.md) — the Reaper migration: what was tested, what passed, what it cost (closed)
