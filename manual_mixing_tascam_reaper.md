@@ -319,10 +319,8 @@ A safety limiter is worth having, and **the one place it must not go is the sign
   limited mix into the mastering project invisibly, which is exactly the "fix it at the master"
   move the separate-project rule exists to prevent.
 - **On Reaper's Monitoring FX chain** (View → Monitoring FX). It sits after the master, feeds
-  the hardware output only, and is not part of an offline render. This is what it is for, and
-  verified against a render before being trusted — see the verdict in
-  [reaper_evaluation.md](reaper_evaluation.md). This is one of the things Reaper does that the
-  old Pro Tools setup could not.
+  the hardware output only, and is not part of an offline render — verified against an actual
+  render before being trusted. This is what it is for.
 
 | Slot | Setting | Why |
 |---|---|---|

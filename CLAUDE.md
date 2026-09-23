@@ -135,7 +135,8 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 
 ## Gear and signal chain
 
-- Apple Studio M4 — runs **Reaper**, the only DAW (no Ableton, no Pro Tools). Returns to the
+- Apple Studio M4 — runs **Reaper** (licence bought, $60 one-time), the only DAW — no Ableton,
+  no Pro Tools, and no DAW subscription. Returns to the
   desk on ch 21/22 along with everything else coming out of the Mac. Plugins: Reaper stock
   (ReaDelay, ReaVerbate, ReaComp, ReaLimit) plus **FabFilter Pro-Q 4**, the **Waves SSL
   E-Channel** strip, **BABY Audio TAIP** and the free **Youlean Loudness Meter 2**. The
@@ -262,11 +263,6 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
   Shorts deliverable, given no mastering experience yet and a pro handling real releases. See
   [mastering_evaluation_landr.md](mastering_evaluation_landr.md). Nothing subscribed. Related:
   Pro-L 2 is **not** the answer to Shorts loudness — at −12 LUFS the limiter barely works.
-
-- ~~**DAW**~~ — **settled: Reaper.** All the feasibility tests passed and Pro Tools is gone.
-  $60 one-time instead of ~200 CHF/year, no input-count tier, a plain-text `.RPP` project file,
-  and a Monitoring FX chain that holds the safety limiter outside the render path. The record of
-  what was tested is in [reaper_evaluation.md](reaper_evaluation.md).
 
 ## Currently not in use
 

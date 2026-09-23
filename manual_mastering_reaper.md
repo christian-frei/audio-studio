@@ -145,8 +145,8 @@ Recorded so it does not creep back in:
   project. On a master it was adding a dB of colour to a record that gets its colour from a
   12-bit sampler and a turntable.
 - **No Pro-L 2, no Pro-C 3.** At −12 LUFS the limiter does 1–2 dB of work, which ReaLimit does
-  perfectly well. The FabFilter question is in [reaper_evaluation.md](reaper_evaluation.md), and
-  the answer is not "for loudness".
+  perfectly well. If a FabFilter plugin is ever bought it should be argued on capability —
+  **Pro-MB** can expand as well as compress, which nothing here can — never on loudness.
 
 **Adding a plugin here should feel like an admission**, not an improvement — it means something
 upstream was left unfinished.

@@ -43,9 +43,9 @@ overshoot on encode is real, and it is the only true-peak risk here.
 
 **What this means for the money question:** at a −12 LUFS target a limiter on this material is
 doing roughly **1–2 dB of work**. That is not a hard job for any limiter. Buying Pro-L 2 to be loud on
-Shorts is buying the wrong tool for a problem that does not exist. If Pro-L 2 gets bought later
-it should be for its metering, or the FabFilter question should go to **Pro-MB** instead — see
-the reasoning in [reaper_evaluation.md](reaper_evaluation.md).
+Shorts is buying the wrong tool for a problem that does not exist. If FabFilter money gets spent
+later it should go to **Pro-MB** instead — it expands as well as compresses, which nothing in the
+setup currently does — and it should be argued on that capability, not on loudness.
 
 ### What the targets become
 
