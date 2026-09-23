@@ -327,11 +327,18 @@ what a limiter threshold actually gets set against.
 
 | Deliverable | Integrated LUFS | Notes |
 |---|---|---|
+| **YouTube Shorts** | **−14 LUFS**, −1.0 dBTP | The platform's own target. Anything louder is turned down by a plain gain change at playback — there is no YouTube limiter — so the extra limiting is thrown away and only its damage survives |
 | **Release master** | **−11 LUFS**, −1.0 dBTP | Streaming normalises to ≈ −14 anyway, so pushing past this only buys distortion that gets turned down |
-| **Rapper reference bounce** | **−9 LUFS** | Only if someone insists on loud. Same chain, limiter threshold ~2 dB lower |
+| **Rapper reference render** | **−11 LUFS** | Loud enough to feel finished on a phone. Past this is vanity |
+| **Archive / handoff to a pro** | **No limiting**, 24-bit | A mastering engineer wants headroom, not a finished master to undo. Render this every time, from the same project |
 
 Watch **PLR (peak-to-loudness): 8–10 dB.** Under 7 and the boom bap punch is gone, whatever the
 LUFS number says.
+
+**At the −14 LUFS Shorts target the limiter is doing 1–2 dB of work**, which is not a hard job
+for any limiter — ReaLimit included. Whether an automatic service should do this stage instead
+is being evaluated in
+[mastering_evaluation_landr.md](mastering_evaluation_landr.md).
 
 ---
 

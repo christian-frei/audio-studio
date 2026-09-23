@@ -76,3 +76,4 @@ diagram with `tools/export-pdf.sh`.
 - [reaper_mastering_session.md](reaper_mastering_session.md) — how the mastering project is laid out, and why it is separate
 - [dbx266xl-reference.md](dbx266xl-reference.md) — DBX 266XL settings for parallel drum glue
 - [reaper_evaluation.md](reaper_evaluation.md) — the Reaper migration: what was tested, what passed, what it cost (closed)
+- [mastering_evaluation_landr.md](mastering_evaluation_landr.md) — LANDR vs the manual chain for Shorts deliverables (open)

@@ -257,6 +257,12 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 - **Subgroup count** — this routing uses six subgroup busses (1/2, 3/4, 5/6). Worth confirming
   the Model 2400 exposes that many as independent physical outputs.
 - **Ch 9** — the only free channel left.
+- **Mastering** — evaluating LANDR (Standard/Pro) against the manual Reaper chain for the
+  Shorts deliverable, given no mastering experience yet and a pro handling real releases. See
+  [mastering_evaluation_landr.md](mastering_evaluation_landr.md). Nothing subscribed. Related:
+  Pro-L 2 is **not** the answer to Shorts loudness — the target is −14 LUFS, where the limiter
+  barely works.
+
 - ~~**DAW**~~ — **settled: Reaper.** All the feasibility tests passed and Pro Tools is gone.
   $60 one-time instead of ~200 CHF/year, no input-count tier, a plain-text `.RPP` project file,
   and a Monitoring FX chain that holds the safety limiter outside the render path. The record of
