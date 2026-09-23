@@ -14,10 +14,8 @@ metering only.
 | **ReaLimit** | Loudness to −12 LUFS | Stock |
 | **Youlean Loudness Meter 2** | Reading the result | Free |
 
-**Nothing to buy.** Routing is in [CLAUDE.md](CLAUDE.md), the project layout in
-[reaper_mastering_session.md](reaper_mastering_session.md), and whether an automatic service
-should do this stage at all is being evaluated in
-[mastering_evaluation_landr.md](mastering_evaluation_landr.md).
+**Nothing to buy, and no service does this stage.** Routing is in [CLAUDE.md](CLAUDE.md), the
+project layout in [reaper_mastering_session.md](reaper_mastering_session.md).
 
 ---
 
@@ -99,11 +97,27 @@ still sounds better at matched level, keep it.
 | Gain | Raise gradually into the loudest bar. **1–2 dB of gain reduction is the whole job** |
 | Dither | **Off in the plugin.** Reaper's render dialog does it — 16-bit only |
 
-**−12 LUFS against YouTube's −14.** Shorts normalises with a plain gain change at playback, so a
-−12 master simply plays about 2 dB down — no re-limiting, no damage. It is a deliberate 2 dB in
-hand for everywhere that does *not* normalise, and it costs nothing where it does. Pushing well
-past this buys distortion that gets turned down anyway; the full reasoning is in
-[mastering_evaluation_landr.md](mastering_evaluation_landr.md).
+### There is no YouTube limiter
+
+Worth knowing, because it is the reason the target is not higher.
+
+**YouTube normalises with a plain gain change at playback, not a limiter.** Upload at −7 LUFS
+and the player turns it down about 7 dB — nothing is re-limited or re-compressed. Upload at
+−20 LUFS and it is *not* turned up; it just plays quiet. **Shorts uses the same ≈ −14 LUFS
+target as the rest of the platform.**
+
+| Upload at | What plays | What survives |
+|---|---|---|
+| −14 LUFS | −14 LUFS | Everything |
+| **−12 LUFS** *(the target here)* | −14 LUFS, turned down 2 dB | Everything. The 2 dB is deliberate headroom for everywhere that does *not* normalise, and costs nothing where it does |
+| −7 LUFS | −14 LUFS, turned down 7 dB | The distortion. Nothing sounds louder, the transients are just gone |
+
+**The damage people blame on the platform is almost always their own limiter** — baked in before
+upload, permanent, and then turned down anyway. The one thing the platform genuinely does to the
+audio is transcode it to a lossy codec, and **−1.0 dBTP** is what protects against overshoot on
+encode. That is the only true-peak risk here.
+
+So loudness is not a plugin-shaped problem, and no limiter upgrade buys anything on Shorts.
 
 **Watch PLR (peak-to-loudness): 8–10 dB.** Under 7 and the boom bap punch is gone, whatever the
 LUFS number says.

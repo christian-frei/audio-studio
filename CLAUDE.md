@@ -259,10 +259,6 @@ merge box in the signal path, so it lives on a shelf or behind the desk.
 - **Subgroup count** — this routing uses six subgroup busses (1/2, 3/4, 5/6). Worth confirming
   the Model 2400 exposes that many as independent physical outputs.
 - **Ch 9** — the only free channel left.
-- **Mastering** — evaluating LANDR (Standard/Pro) against the manual Reaper chain for the
-  Shorts deliverable, given no mastering experience yet and a pro handling real releases. See
-  [mastering_evaluation_landr.md](mastering_evaluation_landr.md). Nothing subscribed. Related:
-  Pro-L 2 is **not** the answer to Shorts loudness — at −12 LUFS the limiter barely works.
 
 ## Currently not in use
 

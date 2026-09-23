@@ -75,4 +75,3 @@ diagram with `tools/export-pdf.sh`.
 - [manual_mastering_reaper.md](manual_mastering_reaper.md) — the three-plugin mastering chain with exact values
 - [reaper_mastering_session.md](reaper_mastering_session.md) — how the mastering project is laid out, and why it is separate
 - [dbx266xl-reference.md](dbx266xl-reference.md) — DBX 266XL settings for parallel drum glue
-- [mastering_evaluation_landr.md](mastering_evaluation_landr.md) — LANDR vs the manual chain for Shorts deliverables (open)
